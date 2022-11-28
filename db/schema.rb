@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_154318) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_170154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collaboration_requests", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "requester_id"
+    t.string "status", default: "pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_collaboration_requests_on_project_id"
+    t.index ["requester_id"], name: "index_collaboration_requests_on_requester_id"
+  end
+
+  create_table "project_users", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_users_on_project_id"
+    t.index ["user_id"], name: "index_project_users_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.bigint "owner_id"
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_projects_on_owner_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +50,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_154318) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.date "date_of_birth"
+    t.text "bio"
+    t.string "university"
+    t.date "uni_start_year"
+    t.date "uni_end_year"
+    t.string "course"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "collaboration_requests", "projects"
+  add_foreign_key "collaboration_requests", "users", column: "requester_id"
+  add_foreign_key "projects", "users", column: "owner_id"
 end
