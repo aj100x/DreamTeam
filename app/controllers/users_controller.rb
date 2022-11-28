@@ -61,10 +61,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:users).permit(:first_name, :last_name, :date_of_birth, :bio, :email, :university, :uni_start_year, :uni_end_year, :course)
+    params.require(:users).permit(:first_name, :last_name, :date_of_birth, :bio, :email, :university, :uni_start_year,
+                                  :uni_end_year, :course)
   end
 
   def book_param
-    params.require(:user).permit(:first_name, :last_name, :date_of_birth, :bio, :email, :university, :uni_start_year, :uni_end_year, :course)
+    params.require(:user).permit(:first_name, :last_name, :date_of_birth, :bio, :email, :university, :uni_start_year,
+                                 :uni_end_year, :course)
   end
 end
