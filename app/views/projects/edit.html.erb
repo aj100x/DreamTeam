@@ -1,0 +1,10 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<%end %>
+
+<%= link_to "Delete",
+  project_path(@project),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
