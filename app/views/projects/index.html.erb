@@ -1,18 +1,10 @@
-<section>
-  <h1>Projects</h1>
-
-</section>
-  <div class="container vh-100">
-    <div class="grid">
-      <% @projects.each do |project| %>
-          <div class="card" style="width: 18rem;">
-              <div>
-              <a href="<%=project_path(project)%>">
-                <p class="card-title"><%= project.name %></p>
-                <p class="card-title"><%= project.description %></p>
-                </a>
-              </div>
-          </div>
-      <% end %>
-    </div>
-  </div>
+<div class="container centered_container">
+  <% @projects.each do |project| %>
+    <a href=<%=project_path(project)%> class="card w-100 border-success mb-3">
+      <div class="card-header bg-transparent border-success"><%= project.name %></div>
+      <div class="card-body text-success">
+        <p class="card-text"><%= project.description %></p>
+      </div>
+  </a>
+  <% end %>
+</div>
