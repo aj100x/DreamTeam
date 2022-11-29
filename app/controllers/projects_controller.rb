@@ -39,6 +39,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.destroy
+      redirect_to projects_path(@project)
+    else
+      render :index
+    end
+  end
+
   private
 
   def set_project
