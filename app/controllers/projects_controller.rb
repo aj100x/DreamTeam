@@ -34,6 +34,7 @@ class ProjectsController < ApplicationController
       redirect_to projects_path(@project)
     else
       render :index
+    end
   end
 end
 
@@ -49,5 +50,4 @@ end
 
 def project_param
   params.require(:project).permit(:owner_id, :name, :description)
-end
 end

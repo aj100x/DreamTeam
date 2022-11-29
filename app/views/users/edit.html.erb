@@ -1,0 +1,14 @@
+<div class='container'>
+  <%= simple_form_for current_user, url: user_path do |f| %>
+    <%= f.input :email %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :bio %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :university %>
+    <%= f.input :uni_start_year %>
+    <%= f.input :uni_end_year %>
+    <%= f.input :course %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
