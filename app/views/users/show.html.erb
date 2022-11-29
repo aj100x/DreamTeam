@@ -1,0 +1,12 @@
+<div class="container">
+  <%= current_user.email %>
+  <%= current_user.first_name %>
+  <%= current_user.last_name %>
+  <%= current_user.bio %>
+  <%= current_user.date_of_birth %>
+  <%= current_user.university %>
+  <%= current_user.uni_start_year %>
+  <%= current_user.uni_end_year %>
+  <%= current_user.course %>
+  <%= link_to "Edit Profile", edit_user_path %>
+</div>
