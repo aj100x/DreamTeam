@@ -1,4 +1,11 @@
-  <section>
+
+  <section class="container">
+    <div>
+      <% if @project.photo.attached? %>
+        <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+
     <h1 class="pt-4" style='margin-top: 0px;'>Project <%= @project.name%></h1>
     <%= @project.description  %>
     <%= link_to "edit", edit_project_path %>

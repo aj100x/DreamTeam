@@ -15,6 +15,10 @@ gem "pg", "~> 1.1"
 # Use faker for mock data
 gem "faker"
 
+# Photo functionaility
+gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
