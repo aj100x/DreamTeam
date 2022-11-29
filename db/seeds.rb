@@ -17,7 +17,7 @@ user1 = User.create(email: "araz@tess.com", password: "1234567", password_confir
   proj = Project.new(
     owner_id: user1.id,
     name: "#{Faker::Movie.title}",
-    description: "#{Faker::Movie.quote}"
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
   )
   proj.save
 end

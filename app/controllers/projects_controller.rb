@@ -16,8 +16,9 @@ class ProjectsController < ApplicationController
     @project.owner = current_user
     if @project.save
       redirect_to project_path(@project)
+      flash[:notice] = "New project succesfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
