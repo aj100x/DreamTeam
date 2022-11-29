@@ -1,0 +1,12 @@
+<div class="avatars d-flex align-items-center">
+  <% collaborators.first(5).each do |collaborator| %>
+    <% if collaborator.image.attached? %>
+      <%= cl_image_tag project.photo.key, class: 'avatar-bordered' %>
+    <% else %>
+      <img class="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <% end %>
+  <% end %>
+  <div class="hidden-collaborators-count">
+    + <%= 2 %>
+  </div>
+</div>

@@ -6,6 +6,11 @@ class User < ApplicationRecord
   has_many :project_users, dependent: :destroy
   has_many :projects, through: :project_users
   has_many :collaboration_requests, foreign_key: "requester_id"
+  has_one_attached :image
   validates :first_name, :last_name, :bio, presence: true, on: :update
   # has_many :colloboration_request_demands, foreign_key: "requestee_id", class_name: "CollaborationRequest"
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end
