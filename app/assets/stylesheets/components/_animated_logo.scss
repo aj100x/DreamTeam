@@ -1,0 +1,37 @@
+// html,
+// body {
+// 	box-sizing: border-box;
+// 	min-height: 100vh;
+// 	display: flex;
+// 	align-content: center;
+// 	justify-content: center;
+// 	align-items: center;
+// 	background-color: black;
+// }
+
+#circle,
+#kosmic {
+	width: 50vw;
+}
+
+#circle {
+	position: relative;
+}
+
+#kosmic {
+	position: absolute;
+}
+
+#shadow {
+	animation: rotate 5s infinite;
+	transform-origin: center;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
