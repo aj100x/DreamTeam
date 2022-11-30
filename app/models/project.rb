@@ -4,6 +4,6 @@ class Project < ApplicationRecord
   has_many :project_users, dependent: :destroy
   has_many :collaborators, through: :project_users, source: :user
   has_many :collaboration_requests, dependent: :destroy
-  validates :name, :description, :photo, presence: true
+  validates :name, :description, presence: true
   validates :description, length: { minimum: 25 }
 end
