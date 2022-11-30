@@ -1,4 +1,4 @@
-.banner {
+.form-banner {
   height: 100vh;
   display: flex;
   justify-content: space-around;
@@ -21,7 +21,7 @@
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
-    font-family: $rubik;
+    font-family: $headers-font;
     font-weight: bold;
     font-size: 50px;
   }
