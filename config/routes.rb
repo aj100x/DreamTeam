@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :projects
+  resources :projects do
+    resources :collaboration_requests, only: :create
+  end
 end

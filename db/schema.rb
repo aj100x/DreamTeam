@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_172251) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_120257) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_172251) do
     t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content"
     t.index ["project_id"], name: "index_collaboration_requests_on_project_id"
     t.index ["requester_id"], name: "index_collaboration_requests_on_requester_id"
   end
