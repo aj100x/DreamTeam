@@ -11,3 +11,10 @@
 @import "components/index";
 @import "pages/index";
 @import "projects/index";
+
+.home-container {
+  display:grid;
+  width: 100%;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
