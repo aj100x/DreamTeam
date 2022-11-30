@@ -17,6 +17,9 @@ class CollaborationRequestsController < ApplicationController
     @collaboration_request = CollaborationRequest.new
   end
 
+  def index
+    @collaboration_request = CollaborationRequest.all
+  end
 
 
   private
