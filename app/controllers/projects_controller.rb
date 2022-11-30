@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @collaboration_request = CollaborationRequest.new(project: @project)
   end
 
   def new
