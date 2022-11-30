@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :project_users, dependent: :destroy
   has_many :projects, through: :project_users
+  has_many :owned_projects, foreign_key: "owner_id", class_name: "Project"
   has_many :collaboration_requests, foreign_key: "requester_id"
   has_one_attached :image
   validates :first_name, :last_name, :bio, presence: true, on: :update
@@ -12,5 +13,10 @@ class User < ApplicationRecord
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
+  def education_details
+    return unless course && university
+    "took #{course.capitalize} at #{university.capitalize} from #{uni_start_year} to #{uni_end_year}"
   end
 end
