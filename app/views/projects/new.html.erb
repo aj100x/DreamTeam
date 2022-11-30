@@ -2,6 +2,7 @@
   <%= f.error_notification %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :yturl, label: "YouTube ID", hint: "What comes after https://www.youtube.com/watch?v=", placeholder: "e.g. dQw4w9WgXcQ" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true }, hint: "You can upload multiple files at once. Images will be displayed in 3:2 format." %>
   <%= f.submit %>
 <%end %>
