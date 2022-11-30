@@ -15,6 +15,9 @@ gem "pg", "~> 1.1"
 # Use faker for mock data
 gem "faker"
 
+# So that we can use JavaScript [https://guides.rubyonrails.org/webpacker.html]
+gem "webpacker"
+
 # Photo functionaility
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
