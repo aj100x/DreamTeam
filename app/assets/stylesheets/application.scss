@@ -12,3 +12,16 @@
 @import "pages/index";
 @import "projects/index";
 @import "projects/new";
+
+// .home-container {
+//   display:grid;
+//   width: 100%;
+//   grid-template-rows: auto 1fr auto;
+//   min-height: 100vh;
+// }
+body {
+  display: flex;
+  flex-direction: column;
+
+}
+
