@@ -6,7 +6,8 @@ class User < ApplicationRecord
   has_many :project_users, dependent: :destroy
   has_many :projects, through: :project_users
   has_many :owned_projects, foreign_key: "owner_id", class_name: "Project"
-  has_many :collaboration_requests, foreign_key: "requester_id"
+  has_many :collaboration_requests_as_requester, foreign_key: "requester_id", class_name: "CollaborationRequest"
+  has_many :collaboration_requests_on_projects_owned, through: :owned_projects, source: "owner"
   has_one_attached :image
   validates :first_name, :last_name, :bio, presence: true, on: :update
   # has_many :colloboration_request_demands, foreign_key: "requestee_id", class_name: "CollaborationRequest"

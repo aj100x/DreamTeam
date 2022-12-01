@@ -1,5 +1,43 @@
-<div class="container d-flex justify-content-center">
-  <div class="feed">
-    <%= render @collaboration_requests %>
-  </div>
-</div>
+
+<p>Requests Ive made to join a project : </p>
+
+  <% current_user.collaboration_requests_as_requester.each do |collaboration_request| %>
+      <%= link_to collaboration_request.project.name, user_path(collaboration_request) %>
+    <div>
+      <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
+    </div>
+  <% end %>
+
+
+  <%# status of the request %>
+  <%# link to the show of the project the name of the project %>
+  <%# link to the show of the project owner %>
+  <%# my message %>
+
+
+<%# <%= link_to user_path(collaborator %>
+
+
+<p>Requests Ive received : </p>
+
+  <% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
+      <%= link_to collaboration_request.project.name, user_path(collaboration_request) %>
+    <div>
+      <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
+    </div>
+  <% end %>
+
+<%# collaboration requests ive received %>
+
+<%# status of the request %>
+<%# link to the show of the project name  %>
+<%# link to the show of the requester %>
+<%# message of the requester %>
+<%# accept/decline buttons %>
+
+
+
+
+
+
+<%# listing the collab requests that the current user (alicetdc) has made and their status %>

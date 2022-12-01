@@ -47,6 +47,5 @@ collaborator5 =  User.create(email: "ssssss@tess.com", password: "1234567", pass
     user: collaborator5,
     project: proj
   )
-
-
 end
+
