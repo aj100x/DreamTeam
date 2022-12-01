@@ -1,13 +1,13 @@
 <div class="panel" id="new-project">
-  <form class="double-border">
+  <div class="double-border">
     <h2>New Project</h2>
     <%= simple_form_for(@project) do |f| %>
-    <input-erb><%= f.error_notification %></input-erb>
-    <input-erb><%= f.input :name %></input-erb>
-    <input-erb><%= f.input :description %></input-erb>
-    <input-erb><%= f.input :yturl, label: "YouTube ID", hint: "What comes after https://www.youtube.com/watch?v=", placeholder: "e.g. dQw4w9WgXcQ" %></input-erb>
-    <input-erb><%= f.input :photos, as: :file, input_html: { multiple: true }, hint: "You can upload multiple files at once. Images will be displayed in 3:2 format." %></input-erb>
-    <button-erb><%= f.submit %></button-erb>
-    <%end %>
-  </form>
+      <%= f.error_notification %>
+      <%= f.input :name, label_html: { class: 'input-erb' } %>
+      <%= f.input :description, label_html: { class: 'input-erb' } %>
+      <%= f.input :yturl, label_html: { class: 'input-erb' }, label: "YouTube ID", hint: "What comes after https://www.youtube.com/watch?v=", placeholder: "e.g. dQw4w9WgXcQ" %>
+      <%= f.input :photos, label_html: { class: 'input-erb' }, as: :file, input_html: { multiple: true }, hint: "You can upload multiple files at once. Images will be displayed in 3:2 format." %>
+      <%= f.submit label_html: { class: 'button-erb' }%>
+    <% end %>
+  </div>
 </div>

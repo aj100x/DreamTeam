@@ -13,6 +13,12 @@
       <h1 class='header-primary'><%= @project.name%></h1>
       <%= @project.description %>
 
+      # Only displays youtube video if a yturl (youtube id) is present
+      <% if @project.yturl.present? %>
+        <div class="container d-flex justify-content-center mt-5 mb-5">
+          <iframe width="560" height="315" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
+        </div>
+      <% end %>
 
       <%= render partial: "projects/carousel" %>
 
@@ -68,9 +74,6 @@
       </div>
     </div>
   </div>
-  <div class="container d-flex justify-content-center mt-5">
-  <iframe width="560" height="315" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
-</div>
 </div>
 
 
