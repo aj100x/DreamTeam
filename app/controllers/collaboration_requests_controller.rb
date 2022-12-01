@@ -18,9 +18,11 @@ class CollaborationRequestsController < ApplicationController
   end
 
   def index
-    @collaboration_request = CollaborationRequest.all
+    @collaboration_requests = CollaborationRequest.all
   end
 
+  # list the collaboration requests that the project owner has recieved
+  # list the collaboration requests that the requestee has made
 
   private
 

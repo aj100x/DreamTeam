@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :projects do
-    resources :collaboration_requests, only: :create
+    resources :collaboration_requests, only: [:create, :index]
   end
 end
+
+
+
+
