@@ -21,10 +21,11 @@
 <p>Requests Ive received : </p>
 
   <% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
-      <%= link_to collaboration_request.project.name, user_path(collaboration_request) %>
-    <div>
-      <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
-    </div>
+      <%#= link_to collaboration_request.project.name, user_path(collaboration_request) %>
+      <%= collaboration_request.requester.first_name %>
+    <%# <div> %>
+      <%#= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
+    <%# </div> %>
   <% end %>
 
 <%# collaboration requests ive received %>
@@ -34,10 +35,3 @@
 <%# link to the show of the requester %>
 <%# message of the requester %>
 <%# accept/decline buttons %>
-
-
-
-
-
-
-<%# listing the collab requests that the current user (alicetdc) has made and their status %>
