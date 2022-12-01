@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :owned_projects, foreign_key: "owner_id", class_name: "Project"
   has_many :collaboration_requests, foreign_key: "requester_id"
   has_one_attached :image
-  validates :first_name, :last_name, :bio, presence: true, on: :update
+  validates :first_name, :last_name, :bio, :tagline, presence: true, on: :update
   # has_many :colloboration_request_demands, foreign_key: "requestee_id", class_name: "CollaborationRequest"
 
   def full_name
