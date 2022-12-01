@@ -1,8 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik+Microbe&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;1,500&family=Roboto:wght@100;300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
 // Define fonts for body and headers
-$body-font: 'Montserrat', 'sans-serif';
+$body-font: "Fjalla One";
+// $body-font: 'Montserrat', 'sans-serif';
 // 'Oswald', 'sans-serif';
 $headers-font: 'Roboto', 'sans-serif';
 

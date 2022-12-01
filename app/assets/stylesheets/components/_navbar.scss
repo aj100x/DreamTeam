@@ -1,6 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 132, 0, 0.67);
+}
+
+.navbar-lewagon a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +14,24 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  background-color: white;
+  width: 100px;
+  object-fit: cover;
+}
+
+.navbar-dropdown-color a {
+  color: black !important;
+}
+
+// app/stylesheets/layout/_navbar.scss
+
+.navbar-home {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  .navbar-wagon-link {
+    color: white;
+    font-weight: bold;
+  }
 }
