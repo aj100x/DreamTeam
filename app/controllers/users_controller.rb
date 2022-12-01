@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def save
+
+  end
+
   def update
     if current_user.update!(user_params)
       flash[:notice] = "Profile successfully updated"
@@ -23,6 +27,7 @@ class UsersController < ApplicationController
       :email,
       :first_name,
       :last_name,
+      :tagline,
       :bio,
       :uni_start_year,
       :uni_end_year,
