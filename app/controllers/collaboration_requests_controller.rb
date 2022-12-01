@@ -1,5 +1,4 @@
 class CollaborationRequestsController < ApplicationController
-
   def create
     @project = Project.find(params[:project_id])
     @collaboration_request = CollaborationRequest.new(collaboration_request_params)
@@ -10,7 +9,7 @@ class CollaborationRequestsController < ApplicationController
       flash[:notice] = "Request Sent"
     else
       render :new, status: :unprocessable_entity
-  end
+    end
   end
 
   def new

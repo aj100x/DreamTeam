@@ -17,7 +17,7 @@ gem "faker"
 
 # Photo functionaility
 gem "cloudinary"
-gem "dotenv-rails", groups: [:development, :test]
+gem "dotenv-rails", groups: %i[development test]
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"

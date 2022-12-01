@@ -1,0 +1,14 @@
+{
+  "entrypoints": {
+    "sliderhome": {
+      "js": [
+        "/packs/js/sliderhome-95007f4fab7377090806.js"
+      ],
+      "js.map": [
+        "/packs/js/sliderhome-95007f4fab7377090806.js.map"
+      ]
+    }
+  },
+  "sliderhome.js": "/packs/js/sliderhome-95007f4fab7377090806.js",
+  "sliderhome.js.map": "/packs/js/sliderhome-95007f4fab7377090806.js.map"
+}
