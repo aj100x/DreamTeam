@@ -5,7 +5,7 @@ class CollaborationRequestsController < ApplicationController
     @collaboration_request = CollaborationRequest.new(collaboration_request_params)
     @collaboration_request.requester = current_user
     @collaboration_request.project = @project
-    if @collaboration_request.save
+    if @collaboration_request.save!
       redirect_to project_path(@project)
       flash[:notice] = "Request Sent"
     else
@@ -18,11 +18,18 @@ class CollaborationRequestsController < ApplicationController
   end
 
   def index
-    @collaboration_requests = CollaborationRequest.all
+  end
+
+  def accept
+    @collaboration_request = CollaborationRequest.find(params[:id])
+    @collaboration_request.status = "accepted"
+    @collaboration_request.save!
+    redirect_to collaboration_requests_path
   end
 
   # list the collaboration requests that the project owner has recieved
   # list the collaboration requests that the requestee has made
+
 
   private
 
