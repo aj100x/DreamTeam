@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :projects do
     resources :collaboration_requests, only: [:create, :index]
   end
+  post '/collaboration_request/:id', to: 'collaboration_requests#accept', as: 'accept_collaboration'
+
 end

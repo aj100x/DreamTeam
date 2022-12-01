@@ -2,10 +2,11 @@
 <p>Requests Ive made to join a project : </p>
 
   <% current_user.collaboration_requests_as_requester.each do |collaboration_request| %>
-      <%= link_to collaboration_request.project.name, user_path(collaboration_request) %>
+      Project name: <%= link_to collaboration_request.project.name, user_path(collaboration_request) %>
     <div>
-      <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
+      Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
     </div>
+    Status: <%= collaboration_request.status %>
   <% end %>
 
 
@@ -21,11 +22,15 @@
 <p>Requests Ive received : </p>
 
   <% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
-      <%#= link_to collaboration_request.project.name, user_path(collaboration_request) %>
-      <%= collaboration_request.requester.first_name %>
-    <%# <div> %>
-      <%#= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
-    <%# </div> %>
+      Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %>
+      <br>
+      Requested by: <%= collaboration_request.requester.first_name %>
+    <div>
+      Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner)%>
+      </div>
+      Status: <%= collaboration_request.status %>
+      <%= link_to "Accept", accept_collaboration_path(collaboration_request),data: { 'turbo-method' => :post }  %>
+
   <% end %>
 
 <%# collaboration requests ive received %>

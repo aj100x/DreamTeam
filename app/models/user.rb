@@ -21,3 +21,7 @@ class User < ApplicationRecord
     "took #{course.capitalize} at #{university.capitalize} from #{uni_start_year} to #{uni_end_year}"
   end
 end
+
+
+## set up accept/decline in collabreq controller
+# method to accept.decline in collabl c

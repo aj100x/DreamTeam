@@ -59,24 +59,20 @@ end
 # CollaborationRequestAsProjectOwner.destroy_all
 fake_person = User.create!(email: "meow@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "meow", last_name: "cat")
 coll_request1 = CollaborationRequest.create!(project: Project.last, requester: fake_person, content: 'Hi can i be in the project')
+
+
+
+
+
 # requester1 = CollaborationRequest.create(email: "meow@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "meow", last_name: "cat")
-
 # owner1 = ProjectUser.create(email: "munchkin@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "munchkin", last_name: "jones")
-
-
 #   collabreq = CollaborationRequestAsRequester.new(
 #     user: requester1,
 #     content: "I would love to work this on this project, please accept me",
 #   )
-
 #   collabreq.save!
-
-
 #   collabproj = CollaborationRequestAsRequesterUser.new(
 #     user: owner1,
 #     content: "get me on this project asap rocky",
 # )
-
 # collabproj.save!
-
-puts "we done baby!"
