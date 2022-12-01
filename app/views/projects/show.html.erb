@@ -13,6 +13,12 @@
       <h1 class='header-primary'><%= @project.name%></h1>
       <%= @project.description %>
 
+      # Only displays youtube video if a yturl (youtube id) is present
+      <% if @project.yturl.present? %>
+        <div class="container d-flex justify-content-center mt-5 mb-5">
+          <iframe width="560" height="315" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
+        </div>
+      <% end %>
 
       <%= render partial: "projects/carousel" %>
 
@@ -21,7 +27,11 @@
       <%= link_to user_path(@project.owner), class: "text-decoration-none" do %>
         <div class="d-flex">
           <div class="">
+          <% if @project.owner.photo.attached? %>
+             <%= cl_image_tag @project.owner.photo.key, class: "project-lead-image" %>
+            <% else %>
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="project-lead-image" alt="Avatar" />
+            <% end %>
           </div>
           <div class="d-flex flex-column">
             <div class="project-owner-container">
@@ -44,7 +54,7 @@
               <%= link_to user_path(collaborator), class: "text-decoration-none" do %>
                 <div class="d-flex">
                   <div>
-                    <% if collaborator.image.attached? %>
+                    <% if collaborator.photo.attached? %>
                       <%= cl_image_tag project.photo.key, class: 'avatar' %>
                     <% else %>
                       <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
@@ -64,9 +74,6 @@
       </div>
     </div>
   </div>
-  <div class="container d-flex justify-content-center mt-5">
-  <iframe width="560" height="315" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
-</div>
 </div>
 
 

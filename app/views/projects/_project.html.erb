@@ -5,9 +5,9 @@
   <div class="d-flex flex-row">
     <div>
       <% if project.photos.attached? %>
-        <%= cl_image_tag project.photos[0].key, width: 270, crop: :fill, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+        <%= cl_image_tag project.photos[0].key, width: 270, height: 200, crop: :fill, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% else %>
-        <%= image_tag "background_homepage_image.jpg", width: 270, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+        <%= image_tag "background_homepage_image.jpg", width: 270, height: 200, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% end %>
     </div>
     <div class="d-flex flex-column">
