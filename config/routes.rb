@@ -12,7 +12,3 @@ Rails.application.routes.draw do
     resources :collaboration_requests, only: [:create, :index]
   end
 end
-
-
-
-

@@ -15,14 +15,16 @@
   background-color: #debaff;
   height: max-content;
 
-  input-erb {
+  .input-erb {
     display: block;
+    margin-bottom: 1em;
     width: 100%;
     font-size: 14pt;
     line-height: 28pt;
     font-family: "Fjalla One";
-    margin-bottom: 28pt;
     border: none;
+    border-top: 1px solid rgb(77, 24, 103);
+    border-left: 1px solid rgb(77, 24, 103);
     border-right: 3.5px solid rgb(77, 24, 103) ;
     border-bottom: 3.5px solid rgb(84, 22, 75);
     background: #ede5f8;
