@@ -15,6 +15,9 @@ gem "pg", "~> 1.1"
 # Use faker for mock data
 gem "faker"
 
+# Shorthand templating language used in projects#new view [https://github.com/slim-template/slim]
+gem 'slim'
+
 # Photo functionaility
 gem "cloudinary"
 gem "dotenv-rails", groups: [:development, :test]
