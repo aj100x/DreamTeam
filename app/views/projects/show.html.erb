@@ -13,22 +13,22 @@
       <h1 class='header-primary'><%= @project.name%></h1>
       <%= @project.description %>
 
-      # Only displays youtube video if a yturl (youtube id) is present
+       <%# Only displays youtube video if a yturl (youtube id) is present %>
       <% if @project.yturl.present? %>
         <div class="container d-flex justify-content-center mt-5 mb-5">
           <iframe width="560" height="315" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
         </div>
       <% end %>
 
-      <%= render partial: "projects/carousel" %>
+      <%= render partial: "projects/carousel" if @project.photos.attached? %>
 
 
       <h3 class="header-secondary">Project lead</h3>
       <%= link_to user_path(@project.owner), class: "text-decoration-none" do %>
         <div class="d-flex">
           <div class="">
-          <% if @project.owner.photo.attached? %>
-             <%= cl_image_tag @project.owner.photo.key, class: "project-lead-image" %>
+          <% if @project.owner.image.attached? %>
+             <%= cl_image_tag @project.owner.image.key, class: "project-lead-image" %>
             <% else %>
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="project-lead-image" alt="Avatar" />
             <% end %>
@@ -38,7 +38,7 @@
               <span><%= @project.owner.full_name %></span>
               <p class='owner-tagline'><%= @project.owner.tagline %></p></p>
               <p class='owner-description'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <%= @project.owner.bio %>
               </p>
             </div>
           </div>
@@ -50,26 +50,26 @@
       <h3 class="header-secondary">Team Members (<%= @project.collaborators.count %>)</h3>
       <div class="row">
         <% @project.collaborators.each do |collaborator| %>
-            <div class="col-6">
-              <%= link_to user_path(collaborator), class: "text-decoration-none" do %>
-                <div class="d-flex">
-                  <div>
-                    <% if collaborator.photo.attached? %>
-                      <%= cl_image_tag project.photo.key, class: 'avatar' %>
-                    <% else %>
-                      <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-                    <% end %>
-                  </div>
-                  <div class="collaborator-details">
-                    <span><%= collaborator.full_name %></span>
-                    <p class='collaborator-title'><%= collaborator.tagline %></p>
-                  </div>
+          <div class="col-6">
+            <%= link_to user_path(collaborator), class: "text-decoration-none" do %>
+              <div class="d-flex mt-1">
+                <div>
+                  <% if collaborator.image.attached? %>
+                    <%= cl_image_tag project.image.key, class: 'avatar' %>
+                  <% else %>
+                    <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+                  <% end %>
                 </div>
-              <% end %>
-            </div>
+                <div class="collaborator-details">
+                  <span><%= collaborator.full_name %></span>
+                  <p class='collaborator-title'><%= collaborator.tagline %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
         <% end %>
       </div>
-      <div class="d-flex">
+      <div class="d-flex mt-3">
         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Join the team !</a>
       </div>
     </div>
