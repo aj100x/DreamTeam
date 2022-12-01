@@ -1,10 +1,16 @@
-.centered_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.border-card{
+  border: 3px solid rgb(77, 24, 103);
 }
 
-// .card {
-//   border-radius: 10px;
-// }
+.index-card-top {
+  background-color: #ffa75e;
+  // border-bottom: 4px black solid;
+  font-family: "Rubik Microbe";
+  font-weight:900;
+  color: white;
+}
+
+#index-inner-card {
+font-family: "Fjalla One";
+background-color: rgb(255, 255, 255);
+}
