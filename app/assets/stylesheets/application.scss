@@ -12,6 +12,7 @@
 @import "pages/index";
 @import "projects/index";
 @import "projects/new";
+@import "collaboration_requests/index.scss";
 
 // .home-container {
 //   display:grid;
@@ -19,9 +20,8 @@
 //   grid-template-rows: auto 1fr auto;
 //   min-height: 100vh;
 // }
+
 body {
   display: flex;
   flex-direction: column;
-
 }
-

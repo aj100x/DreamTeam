@@ -1,16 +1,42 @@
+<div class="m-5">
+<p class="display-6">Collaboration Requests</p>
 
-<p>Requests Ive made to join a project : </p>
+<p class="lead">Requests I have sent:</p>
+
 
   <% current_user.collaboration_requests_as_requester.each do |collaboration_request| %>
-      Project name: <%= link_to collaboration_request.project.name, user_path(collaboration_request) %>
-    <div>
-      Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
-    </div>
+  <div class=collab-card>
+    Project name: <%= link_to collaboration_request.project.name, user_path(collaboration_request.project) %>
+    Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
     Status: <%= collaboration_request.status %>
+    </div>
   <% end %>
 
 
-  <%# status of the request %>
+<p class="lead">Requests I have recieved:</p>
+
+<% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
+<div class=collab-card>
+    Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %>
+    <br>
+    <div>
+      Requested by: <%= link_to collaboration_request.requester.first_name, user_path(collaboration_request.requester.id)%>
+    </div>
+    Message: <%= collaboration_request.content %>
+    <div class="acceptance-card d-flex">
+      <%= button_to "Accept", accept_collaboration_path(collaboration_request.id), data: { 'turbo-method' => :post }  %>
+      <%= button_to "Decline", decline_collaboration_path(collaboration_request.id), class: "ms-2", data: { 'turbo-method' => :post }  %>
+    </div>
+    Status: <%= collaboration_request.status%>
+</div>
+<% end %>
+
+
+
+
+
+
+<%# status of the request %>
   <%# link to the show of the project the name of the project %>
   <%# link to the show of the project owner %>
   <%# my message %>
@@ -19,20 +45,6 @@
 <%# <%= link_to user_path(collaborator %>
 
 
-<p>Requests Ive received : </p>
-
-  <% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
-      Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %>
-      <br>
-      Requested by: <%= collaboration_request.requester.first_name %>
-    <div>
-      Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner)%>
-      </div>
-      <%= link_to "Accept", accept_collaboration_path(collaboration_request),data: { 'turbo-method' => :post }  %>
-      <%= link_to "Decline", decline_collaboration_path(collaboration_request),data: { 'turbo-method' => :post }  %>
-      Status: <%= collaboration_request.status %>
-
-  <% end %>
 
 <%# collaboration requests ive received %>
 
@@ -41,3 +53,6 @@
 <%# link to the show of the requester %>
 <%# message of the requester %>
 <%# accept/decline buttons %>
+
+<%# Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner)%>
+</div>
