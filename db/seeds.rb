@@ -19,16 +19,16 @@ user1 = User.create(email: "araz@tess.com", password: "1234567", password_confir
 
 user2 = User.new(email: "sloane@tess.com", password: "123456", password_confirmation: '123456', first_name: "Sloane", last_name: "Carroll", tagline: "Project Lead")
 user_2_image = URI.open(Rails.root.join("app", "assets", "images", "user2.jpg"))
-user2.image.attach(io: user_2_image, filename: "user2.jpg", content_type: "image/jpg")
+user2.photo.attach(io: user_2_image, filename: "user2.jpg", content_type: "image/jpg")
 puts "User 2 saved? -> #{user2.save!(validate: false)}"
 
 user3 = User.new(email: "david@tess.com", password: "123456", password_confirmation: '123456', first_name: "David", last_name: "Geismar", tagline: "Project Lead")
 user_3_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
-user3.image.attach(io: user_3_image, filename: "user3.jpg", content_type: "image/jpg")
+user3.photo.attach(io: user_3_image, filename: "user3.jpg", content_type: "image/jpg")
 
 user4 = User.new(email: "elizabeth@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lizzie", last_name: "Windsor", tagline: "Project Lead")
 user_4_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
-user4.image.attach(io: user_4_image, filename: "user4.jpg", content_type: "image/jpg")
+user4.photo.attach(io: user_4_image, filename: "user4.jpg", content_type: "image/jpg")
 user5 = User.new(email: "lauren@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lauren", last_name: "Carroll", tagline: "Head Developer")
 
   # creating projects
