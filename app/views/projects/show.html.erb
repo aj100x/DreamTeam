@@ -27,8 +27,8 @@
       <%= link_to user_path(@project.owner), class: "text-decoration-none" do %>
         <div class="d-flex">
           <div class="">
-          <% if @project.owner.image.attached? %>
-             <%= cl_image_tag @project.owner.image.key, class: "project-lead-image" %>
+          <% if @project.owner.photo.attached? %>
+             <%= cl_image_tag @project.owner.photo.key, class: "project-lead-image" %>
             <% else %>
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="project-lead-image" alt="Avatar" />
             <% end %>
@@ -54,8 +54,8 @@
             <%= link_to user_path(collaborator), class: "text-decoration-none" do %>
               <div class="d-flex mt-1">
                 <div>
-                  <% if collaborator.image.attached? %>
-                    <%= cl_image_tag project.image.key, class: 'avatar' %>
+                  <% if collaborator.photo.attached? %>
+                    <%= cl_image_tag project.photo.key, class: 'avatar' %>
                   <% else %>
                     <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
                   <% end %>

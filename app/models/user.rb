@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :collaboration_requests_as_requester, foreign_key: "requester_id", class_name: "CollaborationRequest"
   has_many :collaboration_requests_on_projects_owned, through: :owned_projects, source: :collaboration_requests
   has_many :collaboration_requests, foreign_key: "requester_id"
-  has_one_attached :image
+  has_one_attached :photo
   validates :first_name, :last_name, :bio, :tagline, presence: true, on: :update
   # has_many :colloboration_request_demands, foreign_key: "requestee_id", class_name: "CollaborationRequest"
 
