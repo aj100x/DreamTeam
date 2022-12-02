@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :collaboration_requests, only: :index
   resources :projects do
-    resources :collaboration_requests, only: [:create, :index]
+  resources :collaboration_requests, only: [:create, :index]
   end
   post '/collaboration_request/:id', to: 'collaboration_requests#accept', as: 'accept_collaboration'
 
