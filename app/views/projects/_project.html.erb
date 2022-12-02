@@ -10,12 +10,12 @@
         <%= image_tag "background_homepage_image.jpg", width: 270, height: 200, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% end %>
     </div>
-    <div class="d-flex flex-column">
-      <p class="p-2 pt-0 text-small description">
+    <div class="d-flex flex-column justify-content-center">
+      <p class="p-2 pt-0 text-small description mt-4">
         <%= project.description %>
       </p>
-      <div class="collaborators p-2">
-        <div class="d-flex align-items-center mt-2">
+      <div class="collaborators p-1">
+        <div class="d-flex align-items-center mt-1">
           <%= render 'avatars', collaborators: project.collaborators %>
         </div>
         <div class="mt-2"><%= link_to "Learn more", project_path(project) %></div>
