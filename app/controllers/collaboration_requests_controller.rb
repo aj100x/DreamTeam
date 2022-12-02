@@ -27,6 +27,14 @@ class CollaborationRequestsController < ApplicationController
     redirect_to collaboration_requests_path
   end
 
+  def decline
+    @collaboration_request = CollaborationRequest.find(params[:id])
+    @collaboration_request.status = "declined"
+    @collaboration_request.save!
+    redirect_to collaboration_requests_path
+  end
+
+
   # list the collaboration requests that the project owner has recieved
   # list the collaboration requests that the requestee has made
 
