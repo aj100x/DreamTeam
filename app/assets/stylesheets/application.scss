@@ -12,8 +12,6 @@
 @import "pages/index";
 @import "projects/index";
 @import "projects/new";
-@import "collaboration_requests/index.scss";
-
 // .home-container {
 //   display:grid;
 //   width: 100%;
@@ -25,3 +23,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+
+  // .accept-button:hover {
+  // background-color: black;
+  // color: white;
+  // }
+
+  // class: 'accept-button',
