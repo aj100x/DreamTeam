@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+require "open-uri"
 require 'faker'
 
 Project.destroy_all
@@ -13,43 +13,82 @@ User.destroy_all
 CollaborationRequest.destroy_all
 ProjectUser.destroy_all
 
-user1 = User.create(email: "araz@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Bob", last_name: "L'Eponge", tagline: "Project Lead")
-collaborator1 =  User.create(email: "arazd@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Mark", last_name: "Zuckerberg", tagline: "Senior Developer")
-collaborator2 =  User.create(email: "arazds@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Henry", last_name: "Mars", tagline: "Marketing Lead")
-collaborator3 =  User.create(email: "arazdsss@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Harry", last_name: "Potter", tagline: "Lead Magician")
-collaborator4 =  User.create(email: "arazdsssss@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Groucho", last_name: "Marx", tagline: "PR Lead")
-collaborator5 =  User.create(email: "ssssss@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Elizabeth", last_name: "Holmes", tagline: "Junior Developer")
+user1 = User.create(email: "araz@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Araz", last_name: "Abedi", tagline: "Project Lead")
 
-2.times do
-  proj = Project.new(
+
+
+user2 = User.new(email: "sloane@tess.com", password: "123456", password_confirmation: '123456', first_name: "Sloane", last_name: "Carroll", tagline: "Project Lead")
+user_2_image = URI.open(Rails.root.join("app", "assets", "images", "user2.jpg"))
+user2.image.attach(io: user_2_image, filename: "user2.jpg", content_type: "image/jpg")
+puts "User 2 saved? -> #{user2.save!(validate: false)}"
+
+user3 = User.new(email: "david@tess.com", password: "123456", password_confirmation: '123456', first_name: "David", last_name: "Geismar", tagline: "Project Lead")
+user_3_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
+user3.image.attach(io: user_3_image, filename: "user3.jpg", content_type: "image/jpg")
+
+user4 = User.new(email: "elizabeth@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lizzie", last_name: "Windsor", tagline: "Project Lead")
+user_4_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
+user4.image.attach(io: user_4_image, filename: "user4.jpg", content_type: "image/jpg")
+user5 = User.new(email: "lauren@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lauren", last_name: "Carroll", tagline: "Head Developer")
+
+  # creating projects
+  proj1 = Project.create(
     owner: user1,
     name: Faker::Movie.title,
-    description: "Lorem Ipsum is simply dummy text of the",
+    description: "This is a project that is geared towards creating a website designed to bring creative people together into teams, so that people with ideas can get them off the ground through the power of colllaborative thinking.",
     yturl: "5qap5aO4i9A"
   )
-  proj.save!
+  proj2 = Project.create(
+    owner: user2,
+    name: Faker::Movie.title,
+    description: "This project involves designing a new type of perfume that is hypoallergenic to all those with scent related hypersesnsitivties. ",
+    yturl: "5qap5aO4i9A"
+  )
+  proj3 = Project.create(
+    owner: user3,
+    name: Faker::Movie.title,
+    description: "This project relates to the design and creation of artisinal wooden spoons, carefully handcrafted by our team of local carpenters.",
+    yturl: "5qap5aO4i9A"
+  )
+  proj4 = Project.create(
+    owner: user4,
+    name: Faker::Movie.title,
+    description: "Our project is geared towards finding better care for the elderly as Christmas approches elderly people are often lonely on Christmas and could use a network of friends at their fingetips. Looking for friendly people who are interested in a conmunity interest driven organisations.",
+    yturl: "5qap5aO4i9A"
+  )
+  proj5 = Project.create(
+    owner: user5,
+    name: Faker::Movie.title,
+    description: "This project is the idea to create a small candle-making business. our candles are made from plant-based wax and have recycled glass holders. Looking for artists and social media managers.",
+    yturl: "5qap5aO4i9A"
+  )
+  proj6 = Project.create(
+    owner: user5,
+    name: Faker::Movie.title,
+    description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. It's an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins.",
+    yturl: "5qap5aO4i9A"
+  )
+  # adding collaborators to the first project
   ProjectUser.create(
-    user: collaborator1,
-    project: proj
+    user: user2,
+    project: proj1
   )
   ProjectUser.create(
-    user: collaborator2,
-    project: proj
+    user: user3,
+    project: proj1
   )
   ProjectUser.create(
-    user: collaborator3,
-    project: proj
+    user: user4,
+    project: proj1
   )
   ProjectUser.create(
-    user: collaborator4,
-    project: proj
+    user: user5,
+    project: proj2
   )
   ProjectUser.create(
-    user: collaborator5,
-    project: proj
+    user: user4,
+    project: proj2
   )
-end
-
 
 # create a seed for: collaboration requests as requester
 # create a seed for: collaboration request where i am project owner
