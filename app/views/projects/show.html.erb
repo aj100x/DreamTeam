@@ -51,7 +51,7 @@
               <div class="d-flex mt-1">
                 <div>
                   <% if collaborator.photo.attached? %>
-                    <%= cl_image_tag project.photo.key, class: 'avatar' %>
+                    <%= cl_image_tag collaborator.photo.key, class: 'avatar' %>
                   <% else %>
                     <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
                   <% end %>
