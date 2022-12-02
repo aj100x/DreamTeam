@@ -28,8 +28,9 @@
     <div>
       Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner)%>
       </div>
-      Status: <%= collaboration_request.status %>
       <%= link_to "Accept", accept_collaboration_path(collaboration_request),data: { 'turbo-method' => :post }  %>
+      <%= link_to "Decline", decline_collaboration_path(collaboration_request),data: { 'turbo-method' => :post }  %>
+      Status: <%= collaboration_request.status %>
 
   <% end %>
 
