@@ -7,14 +7,11 @@
 
 <div class="user-show-card-internal">
     <div class="leftcolumn">
-
-
     <% if current_user.photo.attached?%>
           <%= cl_image_tag current_user.photo.key, class: "profilepic", id: "p.p" %>
           <% else %>
             <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
             <% end %>
-        
         <h2><%= @user.full_name%></h2>
           <p><%=@user.tagline%></p>
           <div class="skills">
@@ -25,7 +22,6 @@
             <h4>Qualifications:</h4>
             <p><%= @user.education_details %></p>
           </div>
-            <p><%=  %></p>
           </div>
 
     <div class="rightcolumn">
@@ -44,13 +40,13 @@
         <h4>Projects I am part of:</h4>
         <p><%= @user.projects.count %></p>
     </div>
-      <div class="socialmedia">
+      <%# <div class="socialmedia">
         <ul>
           <i class="fa-brands fa-linkedin fa-3x"></i>
           <i class="fa-brands fa-square-twitter fa-3x"></i>
 
         </ul>
-      </div>
+      </div> %>
   </div>
 
   </div>
