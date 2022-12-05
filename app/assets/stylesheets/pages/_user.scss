@@ -32,6 +32,7 @@
     padding: 50px 100px;
     border: 2px solid black;
     box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+    font-family: "Fjalla One";
   }
 
   .user-show-card-internal{
@@ -41,13 +42,15 @@
   }
 
   .leftcolumn{
-    width: 35%;
+    width: 20%;
+    height: 700px;
     background: #967aa1ff ;
     padding: 30px 25px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     text-align: center;
     color: white;
+    margin-right: 1em;
   }
 
   img {
@@ -56,7 +59,7 @@
   }
 
 .rightcolumn{
-  width: 65%;
+  width: 80%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 30 px 25px;
@@ -95,13 +98,13 @@ justify-content: space-between;
 .socialmedia ul{
   display: flex;
   flex-direction: row;
-  width: 10px;
+  width: 140px;
   height: 10px;
   margin-right: 10px;
   text-align: center;
   justify-content: space-between;
   size: 70px;
-
+  margin-top: 380px;
 }
 
 }
