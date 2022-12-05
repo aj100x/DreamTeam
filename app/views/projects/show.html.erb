@@ -41,7 +41,7 @@
         </div>
       <% end %>
     </div>
-
+  <%= link_to 'View Chat', chatroom_path(@project.chatroom) if @project.chatroom.present? %>
     <div class="mt-3">
       <h3 class="header-secondary">Team Members (<%= @project.collaborators.count %>)</h3>
       <div class="row">

@@ -1,9 +1,15 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-  def index
-    @projects = Project.all
+    def index
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @projects = Project.where(sql_query, query: "%#{params[:query]}%")
+      else
+      @projects = Project.all
+    end
   end
+
 
   def show
     @project = Project.find(params[:id])
@@ -18,6 +24,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.owner = current_user
     if @project.save!
+      Chatroom.create!(project: @project)
       redirect_to project_path(@project)
       flash[:notice] = "New project succesfully created."
     else
