@@ -1,5 +1,3 @@
-
-
 .project-show-wrapper {
   // margin: 5em;
   padding-left: 10em;
@@ -8,18 +6,18 @@
 
 
   .project-show-card {
-    background: #f8f4e5;
+    background: #ffffff;
     padding: 50px 100px;
     border: 2px solid black;
     box-sizing: content-box;
-    box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+    box-shadow: 15px 15px 1px #b0ceff, 15px 15px 1px 2px black;
   }
 
   .big-title {
     display: block;
     font-size: 1.5em;
     font-weight: 800;
-    background-color: #ffa580;
+    background-color: #b0ceff;
     padding: 0.2em;
     // box-shadow: 6.5px 7.5px 0px -2px #52353599;
     border: black 2px solid;
@@ -40,6 +38,9 @@
     display: flex;
     flex-direction: column;
     padding: 5em;
+    background-color: white;
+    border: black 2px solid;
+    margin-top: 2em;
 
     img {
       width: 100%;
