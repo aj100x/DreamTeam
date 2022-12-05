@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
     def index
       if params[:query].present?
         sql_query = "name ILIKE :query OR description ILIKE :query"
-        @projects = Projects.where(sql_query, query: "%#{params[:query]}%")
+        @projects = Project.where(sql_query, query: "%#{params[:query]}%")
       else
       @projects = Project.all
     end
