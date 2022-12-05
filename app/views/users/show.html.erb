@@ -7,7 +7,14 @@
 
 <div class="user-show-card-internal">
     <div class="leftcolumn">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="user" width="150">
+
+
+    <% if current_user.photo.attached?%>
+          <%= cl_image_tag current_user.photo.key, class: "profilepic", id: "p.p" %>
+          <% else %>
+            <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
+            <% end %>
+        
         <h2><%= @user.full_name%></h2>
           <p><%=@user.tagline%></p>
           <div class="skills">
