@@ -1,28 +1,46 @@
-<div class="userwrapper">
-  <div class="left">
-    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="user" width="100">
-    <h4><%= @user.full_name%></h4>
-    <p><%=@user.tagline%></p>
-</div>
 
-<div class="right">
-  <div class="biography">
-    <h3>Biography:</h3>
-      <div class="textbio">
-        <p><%= @user.bio %></p>
-        </div>
-      </div>
-    </div>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
-<div class="projectoverview">
-    <h3>Project Count:</h3>
-      <div class="projectsowned">
-      <h4>Projects I Own</h4>
-        <p><%= @user.owned_projects.count %> </p>
+<div class="user-show-wrapper">
+  <div class="user-show-card">
+
+
+<div class="user-show-card-internal">
+    <div class="leftcolumn">
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="user" width="150">
+        <h2><%= @user.full_name%></h2>
+          <p><%=@user.tagline%></p>
+          <div class="skills">
+            <h4>Skills:</h4>
+            <p><%= %></p>
+          </div>
+            <p><%=  %></p>
+          </div>
+
+    <div class="rightcolumn">
+      <div class="bio">
+        <h2>Biography:</h2>
+          <p><%= @user.bio %></p>
         </div>
-        <div class="projectsinvolved">
-          <h4>Projects I am part of</h4>
-            <p><%= @user.projects.count %></p>
-      </div>
+        <div class = "userstats">
+          <h3>Project Count:</h3>
+        </div>
+        <div class="projectsowned">
+          <h4>Projects I Own:</h4>
+          <p><%= @user.owned_projects.count %> </p>
+        </div>
+      <div class="projectsinvolved">
+        <h4>Projects I am part of:</h4>
+        <p><%= @user.projects.count %></p>
     </div>
+      <div class="socialmedia">
+        <ul>
+          <i class="fa-brands fa-linkedin fa-3x"></i>
+          <i class="fa-brands fa-square-twitter fa-3x"></i>
+
+        </ul>
+      </div>
   </div>
+
+  </div>
+</div>
