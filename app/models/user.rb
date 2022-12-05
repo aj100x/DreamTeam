@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   def education_details
     return unless course && university
-    "took #{course.capitalize} at #{university.capitalize} from #{uni_start_year} to #{uni_end_year}"
+    "Studied #{course.capitalize} at #{university.capitalize} from #{uni_start_year} to #{uni_end_year}"
   end
 end
 
