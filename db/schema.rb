@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_120723) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_151901) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_120723) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id", null: false
+    t.index ["project_id"], name: "index_chatrooms_on_project_id"
+  end
+
   create_table "collaboration_requests", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "requester_id"
@@ -51,6 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_120723) do
     t.text "content"
     t.index ["project_id"], name: "index_collaboration_requests_on_project_id"
     t.index ["requester_id"], name: "index_collaboration_requests_on_requester_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "project_users", force: :cascade do |t|
@@ -89,13 +107,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_120723) do
     t.date "uni_end_year"
     t.string "course"
     t.string "tagline"
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "projects"
   add_foreign_key "collaboration_requests", "projects"
   add_foreign_key "collaboration_requests", "users", column: "requester_id"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "projects", "users", column: "owner_id"
 end

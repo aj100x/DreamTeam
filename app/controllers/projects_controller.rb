@@ -24,6 +24,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.owner = current_user
     if @project.save!
+      Chatroom.create!(project: @project)
       redirect_to project_path(@project)
       flash[:notice] = "New project succesfully created."
     else
