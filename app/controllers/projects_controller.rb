@@ -1,9 +1,15 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-  def index
-    @projects = Project.all
+    def index
+      if params[:query].present?
+        sql_query = "name ILIKE :query OR description ILIKE :query"
+        @projects = Project.where(sql_query, query: "%#{params[:query]}%")
+      else
+      @projects = Project.all
+    end
   end
+
 
   def show
     @project = Project.find(params[:id])
