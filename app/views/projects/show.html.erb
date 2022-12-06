@@ -7,61 +7,49 @@
 
   <div class="big-description"><%= @project.description %></div>
 
-    <%# <%= render partial: "projects/carousel" if @project.photos.attached? %>
-      <section class="project-images">
-        <div class="project-images-row-1">
-          <% @project.photos.each_with_index do |photo, index| %>
-            <% if index == 0 || index == 1 %>
-              <div class="project-show-image-<%=index+1%>">
-                <%= cl_image_tag photo.key, :gravity=>"faces", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad" %>
-              </div>
-          <% end %>
-        <% end %>
-        </div>
-        <div class="project-images-row-2">
-          <% @project.photos.each_with_index do |photo, index| %>
-            <% if index == 2 || index == 3 %>
-              <div class="project-show-image-<%=index+1%>">
-                <%= cl_image_tag photo.key, :gravity=>"auto", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad"%>
-              </div>
-            <% end %>
-          <% end %>
+  <%# <%= render partial: "projects/carousel" if @project.photos.attached? %>
+  <section class="project-images">
+    <div class="project-images-row-1">
+      <% @project.photos.each_with_index do |photo, index| %>
+        <% if index == 0 || index == 1 %>
+          <div class="project-show-image-<%=index+1%>">
+            <%= cl_image_tag photo.key, :gravity=>"faces", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad" %>
           </div>
-      </section>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="project-images-row-2">
+      <% @project.photos.each_with_index do |photo, index| %>
+        <% if index == 2 || index == 3 %>
+          <div class="project-show-image-<%=index+1%>">
+            <%= cl_image_tag photo.key, :gravity=>"auto", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad"%>
+          </div>
+        <% end %>
+      <% end %>
+      </div>
+  </section>
 
-    <h3 class="header-secondary">Project lead</h3>
-    <%= link_to user_path(@project.owner), class: "text-decoration-none" do %>
-      <div class="d-flex">
-        <div class="">
-        <% if @project.owner.photo.attached? %>
+  <section class="team-info">
+
+    <div class="team-leader">
+      <p class="proj-lead">Project lead</p>
+      <div class="">
+        <%= link_to user_path(@project.owner), class: "text-decoration-none" do %>
+          <% if @project.owner.photo.attached? %>
             <%= cl_image_tag @project.owner.photo.key, class: "project-lead-image" %>
           <% else %>
-          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="project-lead-image" alt="Avatar" />
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="project-lead-image" alt="Avatar" />
           <% end %>
-        </div>
-        <div class="d-flex flex-column">
-          <div class="project-owner-container">
             <span><%= @project.owner.full_name %></span>
             <p class='owner-tagline'><%= @project.owner.tagline %></p></p>
-            <p class='owner-description'>
-              <%= @project.owner.bio %>
-            </p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-
-    <%# Only displays youtube video if a yturl (youtube id) is present %>
-    <% if @project.yturl.present? %>
-      <div class="container d-flex justify-content-center mt-5 mb-5">
-        <iframe width="1020" height="630" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
+            <p class='owner-description'><%= @project.owner.bio %></p>
+        <% end %>
       </div>
     <% end %>
     </div>
-  <%= link_to 'View Chat', chatroom_path(@project.chatroom) if @project.chatroom.present? %>
 
-    <div class="mt-3">
-      <h3 class="header-secondary">Team Members (<%= @project.collaborators.count %>)</h3>
+    <div class="team-members">
+      <p class="team-mem">Team Members (<%= @project.collaborators.count %>)</p>
       <div class="row">
         <% @project.collaborators.each do |collaborator| %>
           <div class="col-6">
@@ -73,38 +61,48 @@
                   <% else %>
                     <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
                   <% end %>
-                </div>
+                  </div>
                 <div class="collaborator-details">
-                  <span><%= collaborator.full_name %></span>
-                  <p class='collaborator-title'><%= collaborator.tagline %></p>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div class="d-flex mt-3">
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Join the team !</a>
-      </div>
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <%= simple_form_for [@project, @collaboration_request] do |f| %>
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Request to collaborate with this team</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <%= f.input :content, placeholder: "Add your request"%>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <%= f.submit "Send request", class: "btn btn-primary" %>
-              </div>
+              <span><%= collaborator.full_name %></span>
+              <p class='collaborator-title'><%= collaborator.tagline %></p>
             </div>
           </div>
         <% end %>
       </div>
+    <% end %>
+    </div>
+    <div class="d-flex mt-3">
+      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Join the team !</a>
+    </div>
+  </section>
+
+  <%# Only displays youtube video if a yturl (youtube id) is present %>
+  <% if @project.yturl.present? %>
+    <div class="container d-flex justify-content-center mt-5 mb-5">
+      <iframe width="1020" height="630" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <% end %>
+  </div>
+  <%= link_to 'View Chat', chatroom_path(@project.chatroom) if @project.chatroom.present? %>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <%= simple_form_for [@project, @collaboration_request] do |f| %>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Request to collaborate with this team</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= f.input :content, placeholder: "Add your request"%>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <%= f.submit "Send request", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
   </div>
 </div>

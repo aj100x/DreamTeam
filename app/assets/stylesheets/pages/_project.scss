@@ -44,9 +44,10 @@
   margin-left: 15px;
   height: 150px;
   display: -webkit-box;
-   -webkit-line-clamp: 9;
-   -webkit-box-orient: vertical;
-   -webkit-box-orient: vertical;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
 }
+

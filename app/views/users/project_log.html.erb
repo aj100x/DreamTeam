@@ -1,0 +1,22 @@
+<div class= "projectlog">
+<h1>Project Log</h1>
+  <div class= "projectowndetails">
+    <h2>Projects I Own:</h2>
+    <% @user.owned_projects.each do |project| %>
+        <%= project.name %>
+        <%= project.description %>
+      <%end %>
+  </div>
+  <div class= "projectbelongdetails">
+  <h2>Projects I am part of:</h2>
+  <% @user.projects.each do |project| %>
+        <%= project.name %>
+        <%= project.description %>
+      <%end %>
+  </div>
+</div>
+
+
+<%# <% @user.owned_projects.collaborators.each do |collaborator| %> 
+      <%# <%= project.collaborators %>
+      <%# <% end %>
