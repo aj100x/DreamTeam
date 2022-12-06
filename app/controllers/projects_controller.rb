@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   def show
     @project = Project.find(params[:id])
     @collaboration_request = CollaborationRequest.new(project: @project)
@@ -70,7 +69,6 @@ class ProjectsController < ApplicationController
   def set_project
     @project = Project.find(params[:id])
   end
-
 
   def project_params
     params.require(:project).permit(

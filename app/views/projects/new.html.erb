@@ -5,8 +5,8 @@
       <%= f.error_notification %>
       <%= f.input :name, label_html: { class: 'input-erb' } %>
       <%= f.input :description, label_html: { class: 'input-erb' } %>
-      <%# #select multiple categories %>
-      <%= f.association :categories %>
+      <% #select multiple categories %>
+      <%= f.association :categories, label_html: { class: 'input-erb' }%>
       <%= f.input :yturl, label_html: { class: 'input-erb' }, label: "YouTube ID", hint: "What comes after https://www.youtube.com/watch?v=", placeholder: "e.g. dQw4w9WgXcQ" %>
       <%= f.input :photos, label_html: { class: 'input-erb' }, as: :file, input_html: { multiple: true }, hint: "You can upload multiple files at once. Images will be displayed in 3:2 format." %>
       <%= f.submit label_html: { class: 'button-erb button-primary' }%>

@@ -52,7 +52,12 @@
             <%= cl_image_tag photo.key, :gravity=>"auto", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad"%>
           </div>
         <% end %>
+      <% end %>
       </div>
+  </section>
+
+  <section class="pitch">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </section>
 
   <section class="team-info">
@@ -71,7 +76,6 @@
             <p class='owner-description'><%= @project.owner.bio %></p>
         <% end %>
       </div>
-    <% end %>
     </div>
 
     <div class="team-members">
