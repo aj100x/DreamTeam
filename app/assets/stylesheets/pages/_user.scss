@@ -1,3 +1,120 @@
-.user-stats {
-  margin-left: 12px;
+// .user-stats {
+//   margin-left: 12px;
+// }
+
+// .userwrapper{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   list-style: none;
+// }
+
+// .userwrapper{
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%,-50%);
+//   display: flex;
+//   box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08)
+// }
+
+
+// .img{
+//   border-radius: 50%
+// }
+
+.user-show-wrapper {
+
+  margin: 5em;
+
+  .user-show-card{
+    background: #f8f4e5;
+    padding: 50px 100px;
+    border: 2px solid black;
+    box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+    font-family: "Fjalla One";
+  }
+
+  .user-show-card-internal{
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between;
+  }
+
+  .leftcolumn{
+    width: 20%;
+    height: 700px;
+    background: #967aa1ff ;
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+    color: white;
+    margin-right: 1em;
+  }
+
+  .profilepic {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+  }
+
+.rightcolumn{
+  width: 80%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 30 px 25px;
+}
+
+.rightcolumn .bio,
+.rightcolumn .userstats{
+  margin-bottom: 25px
+}
+
+.rightcolumn .bio h2,
+.rightcolumn .userstats h3 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #967aa1ff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.rightcolumn .projectsowned,
+.rightcolumn .projectinvolved{
+width: 45;
+justify-content: space-between;
+}
+
+.rightcolumn .projectsowned h4,
+.rightcolumn .projectinvolved h4{
+  margin-bottom: 10px;
+}
+
+.editprofilebutton{
+  // display: flex;
+  // flex-direction: row;
+  margin-top: 380px;
+  margin-right: 70px;
+}
+
+
+// .socialmedia .fa-linkedin,
+// .socialmedia .fa-square-twitter {
+//   color: #967aa1ff;
+// }
+
+// .socialmedia ul{
+//   display: flex;
+//   flex-direction: row;
+//   width: 140px;
+//   height: 10px;
+//   margin-right: 10px;
+//   text-align: center;
+//   justify-content: space-between;
+//   size: 70px;
+//   margin-top: 380px;
+// }
+
 }

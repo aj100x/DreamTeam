@@ -1,43 +1,65 @@
-<section class="h-100 gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-9 col-xl-7">
-        <div class="card">
-          <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
-            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                style="width: 150px; z-index: 1">
-            </div>
-            <div class="ms-3" style="margin-top: 130px;">
-              <h5><%= @user.full_name %></h5>
-              <p><%= @user.email %></p>
-              <p><%= @user.education_details %></p>
-            </div>
+
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="user-show-wrapper">
+  <div class="user-show-card">
+
+
+<div class="user-show-card-internal">
+    <div class="leftcolumn">
+    <% if current_user.photo.attached?%>
+          <%= cl_image_tag current_user.photo.key, class: "profilepic", id: "p.p" %>
+          <% else %>
+            <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
+            <% end %>
+        <h2><%= @user.full_name%></h2>
+          <p><%=@user.tagline%></p>
+          <div class="skills">
+            <h4>Skills:</h4>
+            <p><%= @user.skill %></p>
           </div>
-          <div class="p-4 text-black" style="background-color: #f8f9fa;">
-           <div class="d-flex justify-content-end text-center py-1">
-             <div class='user-stats'>
-               <p class="mb-1 h5"><%= @user.owned_projects.count %> </p>
-               <p class="small text-muted mb-0">Lead</p>
-             </div>
-             <div class='user-stats'>
-               <p class="mb-1 h5"><%= @user.projects.count %> </p>
-               <p class="small text-muted mb-0">Projects</p>
-             </div>
-           </div>
-         </div>
-          <div class="card-body p-4 text-black">
-            <div class="mb-5">
-              <p class="lead fw-normal mb-1">About</p>
-              <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1"><%= @user.tagline %></p></p>
-                <p class="font-italic mb-1"><%= @user.bio %></p>
-              </div>
-            </div>
+          <div class="qualifications">
+            <h4>Qualifications:</h4>
+            <p><%= @user.education_details %></p>
           </div>
+          </div>
+
+    <div class="rightcolumn">
+      <div class="bio">
+        <h2>Biography:</h2>
+          <p><%= @user.bio %></p>
         </div>
-      </div>
+        <div class = "userstats">
+          <h3>Project Count:</h3>
+        </div>
+        <div class="projectsowned">
+          <h4>Projects I Own:</h4>
+          <p><%= @user.owned_projects.count %> </p>
+        </div>
+      <div class="projectsinvolved">
+        <h4>Projects I am part of:</h4>
+        <p><%= @user.projects.count %></p>
     </div>
+    <div class = "editprofilebutton">
+      <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
+    </div>
+
   </div>
-</section>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<%# <div class="socialmedia">
+        <ul>
+          <i class="fa-brands fa-linkedin fa-3x"></i>
+          <i class="fa-brands fa-square-twitter fa-3x"></i>
+
+        </ul>
+      </div> %>
