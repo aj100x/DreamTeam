@@ -1,0 +1,7 @@
+  <div class= "projectbelongdetails">
+  <h2>Projects I am part of:</h2>
+  <% @user.projects.each do |project| %>
+        <%= project.name %>
+        <%= project.description %>
+      <%end %>
+  </div>

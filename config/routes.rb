@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # resource :user
   resources :users
   get '/users/:id/project_log', to: 'users#project_log', as: 'project_log'
+  get '/users/:id/participant_project_log', to: 'users#participant_project_log', as: 'participant_project_log'
 
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

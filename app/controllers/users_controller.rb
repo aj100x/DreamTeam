@@ -25,6 +25,9 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def participant_project_log
+    @user = current_user
+  end
 
 
   def update
