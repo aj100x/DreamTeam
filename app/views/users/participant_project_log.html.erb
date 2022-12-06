@@ -1,10 +1,16 @@
-  <div class= "projectbelongdetails">
-  <h2>Projects I am part of:</h2>
-  <% @user.projects.each do |project| %>
-        <%= project.name %>
-        <%= project.description %>
-        <%project.collaborators.each do |collaboration| %>
-        <%= collaboration.first_name %>
-      <%end %>
+<div class= "participant_project-log-wrapper">
+  <div class= "participant_project-log">
+    <% @user.projects.each do |project| %>
+      <div class= "participant_project-log-card">
+        Description: <%= project.description %>
+        Name:<%= project.name %>
+        </div>
       <%end %>
   </div>
+</div>
+
+
+
+
+
+
