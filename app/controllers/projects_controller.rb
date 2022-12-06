@@ -1,15 +1,14 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-    def index
-      if params[:query].present?
-        sql_query = "name ILIKE :query OR description ILIKE :query"
-        @projects = Project.where(sql_query, query: "%#{params[:query]}%")
-      else
+  def index
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @projects = Project.where(sql_query, query: "%#{params[:query]}%")
+    else
       @projects = Project.all
     end
   end
-
 
   def show
     @project = Project.find(params[:id])
@@ -65,12 +64,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-
   def project_params
     params.require(:project).permit(
       :owner_id,
       :name,
-        :description,
+      :description,
       :yturl,
       photos: [],
       category_ids: []
