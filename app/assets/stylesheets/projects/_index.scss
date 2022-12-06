@@ -1,13 +1,9 @@
-.index-card-top {
-  padding: 50px 100px;
-  // border: 1px solid black;
-}
-
 .search-filter {
   display: flex;
   flex-direction: row;
   justify-content: right;
   margin: 2em;
+  margin-right: 8em;
 }
 
 .searchbar {
@@ -36,4 +32,32 @@ background-color: rgb(255, 255, 255);
 .projects-render {
   margin-left: 7em;
   margin-right: 7em;
+}
+
+.project-index-wrapper {
+  border: black solid 2px;
+  box-shadow: 15px 15px 0px #b0ceff, 15px 15px 1px 2px black;
+  margin-bottom: 2em;
+  padding: 3em;
+  padding-top: 1.5em;
+  background-color: white;
+
+  .project-header {
+    text-align: center;
+    border: black solid 2px;
+    background-color: #c4c4c4;
+  }
+
+  .index-card-internal {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+    margin: 0.5em;
+  }
 }
