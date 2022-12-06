@@ -1,17 +1,39 @@
+.index-card-top {
+  padding: 50px 100px;
+  // border: 1px solid black;
+}
+
+.search-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin: 2em;
+}
+
+.searchbar {
+  margin-right: 1em;
+}
+
 .border-card{
   // border: 3px solid rgb(77, 24, 103);
-  box-shadow: 6px 5px #404040;
+  // box-shadow: 6px 5px #404040;
+  // box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
 }
 
 .index-card-top {
-  background-color: #ffa75e;
+  background-color: #ffffff;
   // border-bottom: 4px black solid;
   font-family: "Rubik Microbe";
   font-weight:900;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 #index-inner-card {
 font-family: "Fjalla One";
 background-color: rgb(255, 255, 255);
+}
+
+.projects-render {
+  margin-left: 7em;
+  margin-right: 7em;
 }
