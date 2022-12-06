@@ -12,6 +12,6 @@ class Project < ApplicationRecord
   has_many :collaboration_requests, dependent: :destroy
   has_one :chatroom, dependent: :destroy
   has_one :pitch, dependent: :destroy
-  validates :name, :description, :pitch, presence: true
+  validates :name, :description, presence: true
   validates :description, length: { minimum: 25 }
 end
