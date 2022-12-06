@@ -70,9 +70,10 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(
       :owner_id,
       :name,
-      :description,
+        :description,
       :yturl,
-      photos: []
+      photos: [],
+      category_ids: []
     )
   end
 end

@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
 
-
 .double-border {
-  background: #f8f4e5;
+  background: #d3dbe5;
   padding: 50px 100px;
-  border: 2px solid black;
-  box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+  border: 1px solid black;
+  box-shadow: 15px 15px 1px #94c1ef, 15px 15px 1px 2px black;
 }
 
 .form-control {
@@ -37,11 +36,11 @@
     line-height: 28pt;
     font-family: "Fjalla One";
     border: none;
-    border-top: 1px solid rgb(77, 24, 103);
-    border-left: 1px solid rgb(77, 24, 103);
-    border-right: 3.5px solid rgb(77, 24, 103) ;
-    border-bottom: 3.5px solid rgb(84, 22, 75);
-    background: #ede5f8;
+    border-top: 1px solid rgb(148,193,239);
+    border-left: 1px solid rgb(148,193,239);
+    border-right: 3.5px solid rgb(148,193,239);
+    border-bottom: 3.5px solid rgb(148,193,239);
+    background: white;
     min-width: 250px;
     padding-left: 5px;
     outline: none;
@@ -49,7 +48,6 @@
   }
 
   input:focus {
-    // border-bottom: 5px solid #ffa580;
     background-color: white;
   }
 
@@ -73,7 +71,7 @@
   }
 
   ::selection {
-    background: #ffc8ff;
+    background: white;
   }
 
   input:-webkit-autofill,
