@@ -1,19 +1,11 @@
-<div class="h-full">
-  <div class="panel" id = "new-project">
-    <div class="double-border">
-        <% @user.owned_projects.each do |project| %>
-        <div class="project-log-card">
-        Project Name: <%= project.name %>
-        Project Description: <%= project.description %>
-        <%project.collaborators.each do |collaboration| %>
-        Project Collaborators: <%= collaboration.first_name %>
-      <%end %>
-      <%end %>
+
+<div class= "project-log-wrapper">
+  <div class= "project-log">
+    <% @user.owned_projects.each do |project| %>
+      <div class= "project-log-card">
+        Description: <%= project.description %>
+        Name: <%= project.name %>
         </div>
-    </div>
+      <%end %>
   </div>
-</div>
-
-
-
 </div>

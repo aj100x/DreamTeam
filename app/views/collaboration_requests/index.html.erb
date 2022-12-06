@@ -6,7 +6,6 @@
 
   <% current_user.collaboration_requests_as_requester.each do |collaboration_request| %>
   <div class="collab-card">
-    <%# Project name: <%= link_to collaboration_request.project.name, user_path(collaboration_request.project)%>
     Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %>
     Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
     Status: <%= collaboration_request.status %>
