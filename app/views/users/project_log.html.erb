@@ -1,25 +1,21 @@
-
-  <div class= "projectlogcard">
-    <div class= "projectloginternal">
-
-
-<%# <div class= "collab-card"> %>
-    <h1>Project Log</h1>
-      <div class= "projectowndetails">
-        <h2>Projects I Own:</h2>
-        <% @user.owned_projects.each do |project| %>
-            <%= project.name %>
-            <%= project.description %>
-            <%project.collaborators.each do |collaboration| %>
-            <%= collaboration.user.name %>
-          <%end %>
-          <%end %>
-      </div>
-    <%# </div> %>
-
-
-
-
-
+<div class="projectlogparticipant">
+  <div class="panel" id="new-project">
+    <div class="double-border">
+      <p class="project-log-header">Project I Own Log:</p>
     </div>
   </div>
+
+
+
+<div class="participant-project-card">
+  <% @user.owned_projects.each do |project| %>
+    <%= project.name %>
+    <%= project.description %>
+    <%project.collaborators.each do |collaboration| %>
+    <%= collaboration.first_name %>
+  <%end %>
+  <%end %>
+</div>
+
+
+</div>
