@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -25,6 +25,9 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def participant_project_log
+    @user = current_user
+  end
 
 
   def update

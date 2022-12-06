@@ -13,7 +13,9 @@
             <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
             <% end %>
         <h1><%= @user.full_name%></h1>
+        <div class="tagline">
           <h3><%=@user.tagline%></h3>
+        </div>
           <div class="skills">
             <h3>Skills:</h3>
             <p><%= @user.skill %></p>
@@ -27,18 +29,18 @@
     <div class="rightcolumn">
       <div class="bio">
         <h1>Biography:</h1>
-          <p><%= @user.bio %></p>
+          <h3><%= @user.bio %></h3>
         </div>
         <div class = "userstats">
           <h2>Project Count:</h2>
         </div>
         <div class="projectsowned">
-          <h4>Projects I Own:</h4>
-          <p><%=link_to @user.owned_projects.count, project_log_path(current_user) %></p>
+          <h3>Projects I Own:</h3>
+          <h4><%=link_to @user.owned_projects.count, project_log_path(current_user) %></h4>
         </div>
       <div class="projectsinvolved">
-        <h4>Projects I am part of:</h4>
-        <p><%= link_to @user.projects.count, project_log_path(current_user) %></p>
+        <h3>Projects I am part of:</h3>
+        <h4><%= link_to @user.projects.count, participant_project_log_path(current_user) %></h4>
     </div>
     <div class = "editprofilebutton">
       <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>

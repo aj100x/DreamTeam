@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    # raise
     @projects = Project.all
     if params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
