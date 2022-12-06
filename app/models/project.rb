@@ -15,4 +15,3 @@ class Project < ApplicationRecord
   validates :description, length: { minimum: 25 }
 
 end
- 
