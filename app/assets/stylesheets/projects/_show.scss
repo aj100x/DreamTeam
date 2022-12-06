@@ -84,6 +84,13 @@
       object-fit: cover;
     }
   }
+
+  .pitch {
+    margin-top: 2em;
+    padding: 2em;
+    border: black 2px solid;
+  }
+
   .team-info {
     margin-top: 2em;
     padding: 2em;
@@ -94,6 +101,11 @@
 
   .team-leader {
     margin-right: 2em;
+
+    .owner-info {
+      margin-top: 1em;
+      text-align: center;
+    }
   }
 
   .proj-lead {
