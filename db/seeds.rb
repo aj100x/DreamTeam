@@ -12,7 +12,6 @@ Project.destroy_all
 User.destroy_all
 CollaborationRequest.destroy_all
 ProjectUser.destroy_all
-binding.pry 
 user1 = User.create(email: "araz@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Araz", last_name: "Abedi", tagline: "Project Lead")
 
 user2 = User.new(email: "sloane@tess.com", password: "123456", password_confirmation: '123456', first_name: "Sloane", last_name: "Carroll", tagline: "Project Lead")

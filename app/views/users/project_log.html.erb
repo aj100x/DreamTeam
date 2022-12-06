@@ -1,0 +1,8 @@
+<div class= "projectlog">
+  div
+<h1>Projects I Own</h1>
+<% @user.owned_projects.each do |project| %>
+<%= project.name %>
+<%end %>
+
+<h1>Projects I am part of</h1>

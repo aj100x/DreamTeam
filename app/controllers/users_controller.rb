@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @user = User.all
+  end
+
+  def project_log
+    @user = current_user
+  end
+
+
 
   def update
     if current_user.update!(user_params)
