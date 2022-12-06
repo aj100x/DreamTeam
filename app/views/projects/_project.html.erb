@@ -1,31 +1,23 @@
-<div class="card-project w-100 mb-3 rounded border-card">
-<div class="card-project w-150 mb-3 rounded border-card">
-<div class="card-project w-150 mb-3 rounded border-card">
-  <div class="border-success p-2 pb-0 index-card-top">
-    <h3 class='header-primary'><%= project.name %></h3>
-  </div>
-  <div id="index-inner-card" class="d-flex flex-row">
-    <div>
+<div class="project-index-wrapper">
+  <p class='project-header'><%= project.name %></p>
+
+  <div class="index-card-internal">
+    <div class="image">
       <% if project.photos.attached? %>
-        <%= cl_image_tag project.photos[0].key, width: 270, height: 200, crop: :fill, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+      <%= cl_image_tag project.photos[0].key, width: 270, height: 200, crop: :fill, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% else %>
-        <%= image_tag "background_homepage_image.jpg", width: 270, height: 200, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+      <%= image_tag "background_homepage_image.jpg", width: 270, height: 200, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% end %>
     </div>
-    <div class="d-flex flex-column justify-content-center">
-      <p class="p-2 pt-0 text-small description mt-4">
-        <%= project.description %>
-        <% project.categories.each do |category| %>
+
+    <div class="info">
+      <%= project.description %>
+      <% project.categories.each do |category| %>
         <%= category.name %>
-        <% end %>
-      </p>
-      <div class="collaborators p-1">
-        <div class="d-flex align-items-center mt-1">
-          <%= render 'avatars', collaborators: project.collaborators %>
-        </div>
-        <%= project.categories.name %>
-        <div class="mt-2"><%= link_to "Learn more", project_path(project) %></div>
-      </div>
+      <% end %>
+      <%= render 'avatars', collaborators: project.collaborators %>
+      <%= project.categories.name %>
+      <div class=""><%= link_to "Learn more", project_path(project) %></div>
     </div>
   </div>
 </div>

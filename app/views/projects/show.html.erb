@@ -45,9 +45,11 @@
           <% else %>
             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp" class="project-lead-image" alt="Avatar" />
           <% end %>
+          <div class="owner-info">
             <p class="owner_name"><%= @project.owner.full_name %></p>
             <p class='owner-tagline'><%= @project.owner.tagline %></p></p>
             <p class='owner-description'><%= @project.owner.bio %></p>
+          </div>
         <% end %>
       </div>
     </div>
