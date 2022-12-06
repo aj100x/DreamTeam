@@ -1,9 +1,11 @@
 <div class= "project-log-wrapper">
   <div class= "project-log">
+    <h1 class="project-log-header">Projects I own:</h1>
     <% @user.owned_projects.each do |project| %>
       <div class= "project-log-card">
-        Description: <%= project.description %>
-        Name: <%= project.name %>
+        <h2 class="project-log-name"><%= project.name %></h2>
+        <h2 class="project-log-description">Description: </h2>
+        <h3><%= project.description %></h3>
         </div>
       <%end %>
   </div>
