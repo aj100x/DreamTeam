@@ -31,7 +31,7 @@
     background: #f8f4e5;
     padding: 50px 100px;
     border: 2px solid black;
-    box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+    box-shadow: 15px 15px 1px #ffdeaa, 15px 15px 1px 2px black;
     font-family: "Fjalla One";
   }
 
@@ -43,14 +43,28 @@
 
   .leftcolumn{
     width: 20%;
-    height: 700px;
-    background: #967aa1ff ;
+    height: 764px;
+    background: rgb(255, 222, 170);
     padding: 30px 25px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    text-align: center;
-    color: white;
+    color: black;
     margin-right: 1em;
+    font-family: "Fjalla One";
+  }
+
+  .leftcolumn .skills p,
+  .leftcolumn .qualifications p {
+    font-size: larger;
+  }
+
+
+
+  .rightcolumn .bio p,
+  .rightcolumn .projectsowned p,
+  .rightcolumn .projectsinvolved p {
+  font-size: larger;
+
   }
 
   .profilepic {
@@ -72,8 +86,8 @@
   margin-bottom: 25px
 }
 
-.rightcolumn .bio h2,
-.rightcolumn .userstats h3 {
+.rightcolumn .bio h1,
+.rightcolumn .userstats h2 {
   margin-bottom: 15px;
   padding-bottom: 5px;
   border-bottom: 1px solid #967aa1ff;
@@ -95,9 +109,16 @@ justify-content: space-between;
 .editprofilebutton{
   // display: flex;
   // flex-direction: row;
-  margin-top: 380px;
-  margin-right: 70px;
+  margin-top: 876px;
+  margin-right: 1414px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }
+
+
+
+
 
 
 // .socialmedia .fa-linkedin,

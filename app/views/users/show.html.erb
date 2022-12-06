@@ -12,25 +12,25 @@
           <% else %>
             <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
             <% end %>
-        <h2><%= @user.full_name%></h2>
-          <p><%=@user.tagline%></p>
+        <h1><%= @user.full_name%></h1>
+          <h3><%=@user.tagline%></h3>
           <div class="skills">
-            <h4>Skills:</h4>
+            <h3>Skills:</h3>
             <p><%= @user.skill %></p>
           </div>
           <div class="qualifications">
-            <h4>Qualifications:</h4>
+            <h3>Qualifications:</h3>
             <p><%= @user.education_details %></p>
           </div>
           </div>
 
     <div class="rightcolumn">
       <div class="bio">
-        <h2>Biography:</h2>
+        <h1>Biography:</h1>
           <p><%= @user.bio %></p>
         </div>
         <div class = "userstats">
-          <h3>Project Count:</h3>
+          <h2>Project Count:</h2>
         </div>
         <div class="projectsowned">
           <h4>Projects I Own:</h4>
