@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/users/:id/project_log', to: 'users#project_log', as: 'project_log'
   get '/users/:id/participant_project_log', to: 'users#participant_project_log', as: 'participant_project_log'
 
+  resources :projects
+  delete '/projects/:id/delete', to: "projects#destroy", as: 'delete_project'
+
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
