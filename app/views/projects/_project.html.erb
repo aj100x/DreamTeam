@@ -1,3 +1,5 @@
+<div class="card-project w-100 mb-3 rounded border-card">
+<div class="card-project w-150 mb-3 rounded border-card">
 <div class="card-project w-150 mb-3 rounded border-card">
   <div class="border-success p-2 pb-0 index-card-top">
     <h3 class='header-primary'><%= project.name %></h3>
@@ -13,6 +15,9 @@
     <div class="d-flex flex-column justify-content-center">
       <p class="p-2 pt-0 text-small description mt-4">
         <%= project.description %>
+        <% project.categories.each do |category| %>
+        <%= category.name %>
+        <% end %>
       </p>
       <div class="collaborators p-1">
         <div class="d-flex align-items-center mt-1">

@@ -5,6 +5,32 @@
     <div class='big-title'><%= @project.name%></div>
   </div>
 
+
+  <div class="big-description"><%= @project.description %>
+        <% @project.categories.each do |category| %>
+        <%= category.name %>
+        <% end %>
+  </div>
+    <%# <%= render partial: "projects/carousel" if @project.photos.attached? %>
+      <section class="project-images">
+        <div class="project-images-row-1">
+          <% @project.photos.each_with_index do |photo, index| %>
+            <% if index == 0 || index == 1 %>
+              <div class="project-show-image-<%=index+1%>">
+                <%= cl_image_tag photo.key, :gravity=>"faces", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad" %>
+              </div>
+          <% end %>
+        <% end %>
+        </div>
+        <div class="project-images-row-2">
+          <% @project.photos.each_with_index do |photo, index| %>
+            <% if index == 2 || index == 3 %>
+              <div class="project-show-image-<%=index+1%>">
+                <%= cl_image_tag photo.key, :gravity=>"auto", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad"%>
+              </div>
+            <% end %>
+          <% end %>
+
   <div class="big-description"><%= @project.description %></div>
 
   <%# <%= render partial: "projects/carousel" if @project.photos.attached? %>
@@ -14,6 +40,7 @@
         <% if index == 0 || index == 1 %>
           <div class="project-show-image-<%=index+1%>">
             <%= cl_image_tag photo.key, :gravity=>"faces", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad" %>
+
           </div>
       <% end %>
     <% end %>
