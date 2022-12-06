@@ -66,7 +66,7 @@ security = Category.create!(name: 'Security')
   proj2 = Project.create(
     owner: user2,
     name: "The Perfumerie",
-    pitch: "The website that finds your team, to build your dream.",
+    pitch: "Relief Perfume, made for sensitive noses.",
     description: "This project involves designing a new type of perfume that is hypoallergenic to all those with scent related hypersesnsitivties. This will combat the gap in the perfume marlket that exists for those with common allergies. ",
     yturl: "5qap5aO4i9A"
   )
@@ -82,7 +82,7 @@ security = Category.create!(name: 'Security')
   proj3 = Project.create(
     owner: user3,
     name: "Spoons R Us",
-    pitch: "The website that finds your team, to build your dream.",
+    pitch: "Bona fide handcrafted artisinal spoons.",
     description: "This project relates to the design and creation of artisinal wooden spoons, carefully handcrafted by our team of local carpenters.",
     yturl: "5qap5aO4i9A"
   )
@@ -100,7 +100,7 @@ security = Category.create!(name: 'Security')
   proj4 = Project.create(
     owner: user4,
     name: "Christmas Outreach",
-    pitch: "The website that finds your team, to build your dream.",
+    pitch: "Give back this Christmas.",
     description: "Our project is geared towards finding better care for the elderly as Christmas approches elderly people are often lonely on Christmas and could use a network of friends at their fingetips. Looking for friendly people who are interested in a conmunity interest driven organisations.",
     yturl: "5qap5aO4i9A"
   )
@@ -116,7 +116,7 @@ security = Category.create!(name: 'Security')
   proj5 = Project.create(
     owner: user5,
     name: "Plantle",
-    pitch: "The website that finds your team, to build your dream.",
+    pitch: "Candles that are friendly to you, and the planet that you live on.",
     description: "This project is the idea to create a small candle-making business. our candles are made from plant-based wax and have recycled glass holders. Looking for artists and social media managers.",
     yturl: "5qap5aO4i9A"
   )
@@ -132,7 +132,7 @@ security = Category.create!(name: 'Security')
   proj6 = Project.create(
     owner: user5,
     name: "Last Minute London",
-    pitch: "The website that finds your team, to build your dream.",
+    pitch: "Perfect night. Hassle free.",
     description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. It's an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins.",
     yturl: "5qap5aO4i9A"
   )
