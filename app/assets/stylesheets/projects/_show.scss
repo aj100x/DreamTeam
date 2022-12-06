@@ -84,4 +84,28 @@
       object-fit: cover;
     }
   }
+  .team-info {
+    margin-top: 2em;
+    padding: 2em;
+    border: black 2px solid;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .team-leader {
+    margin-right: 2em;
+  }
+
+  .proj-lead {
+    border: black 2px solid;
+    text-align: center;
+  }
+
+  .team-members {
+  }
+
+  .team-mem{
+    border: black 2px solid;
+    text-align: center;
+  }
 }
