@@ -5,8 +5,11 @@
     <div class='big-title'><%= @project.name%></div>
   </div>
 
-  <div class="big-description"><%= @project.description %></div>
-
+  <div class="big-description"><%= @project.description %>
+        <% @project.categories.each do |category| %>
+        <%= category.name %>
+        <% end %>
+  </div>
     <%# <%= render partial: "projects/carousel" if @project.photos.attached? %>
       <section class="project-images">
         <div class="project-images-row-1">

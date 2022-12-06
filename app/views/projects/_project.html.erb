@@ -1,16 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
-
 <div class="card-project w-100 mb-3 rounded border-card">
-=======
 <div class="card-project w-150 mb-3 rounded border-card">
->>>>>>> 8b9389d75e9851c15eb3a4f1fa9ee084b9828d56
-=======
 <div class="card-project w-150 mb-3 rounded border-card">
->>>>>>> cd8a790b26f0f87ac9db2c1a7feeec2e827f7613
   <div class="border-success p-2 pb-0 index-card-top">
     <h3 class='header-primary'><%= project.name %></h3>
   </div>
@@ -25,6 +15,9 @@
     <div class="d-flex flex-column justify-content-center">
       <p class="p-2 pt-0 text-small description mt-4">
         <%= project.description %>
+        <% project.categories.each do |category| %>
+        <%= category.name %>
+        <% end %>
       </p>
       <div class="collaborators p-1">
         <div class="d-flex align-items-center mt-1">
