@@ -5,11 +5,9 @@
     <% @user.owned_projects.each do |project| %>
         <%= project.name %>
         <%= project.description %>
+        <%project.collaborators.each do |collaboration| %>
+        <%= collaboration.user.name %>
+      <%end %>
       <%end %>
   </div>
 </div>
-
-
-<%# <% @user.owned_projects.collaborators.each do |collaborator| %>
-      <%# <%= project.collaborators %>
-      <%# <% end %>

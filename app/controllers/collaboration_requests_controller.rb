@@ -24,6 +24,7 @@ class CollaborationRequestsController < ApplicationController
     @collaboration_request = CollaborationRequest.find(params[:id])
     @collaboration_request.status = "accepted"
     @collaboration_request.save!
+    @project_user = ProjectUser.create(project: @collaboration_request.project, user: @collaboration_request.requester)
     redirect_to collaboration_requests_path
   end
 

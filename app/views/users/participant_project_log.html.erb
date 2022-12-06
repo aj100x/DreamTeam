@@ -3,5 +3,8 @@
   <% @user.projects.each do |project| %>
         <%= project.name %>
         <%= project.description %>
+        <%project.collaborators.each do |collaboration| %>
+        <%= collaboration.first_name %>
+      <%end %>
       <%end %>
   </div>
