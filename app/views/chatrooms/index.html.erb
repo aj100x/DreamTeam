@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="heading fw-bolder text-center"><strong> My Inbox </strong></h1>
+  <br>
+    <% @chatrooms.each do |chatroom| %>
+    <%= link_to chatroom_path(chatroom) do %>
+    <div class="inbox-chats">
+      <% participant = chatroom.requester == current_user ? chatroom.receiver : chatroom.requester %>
+      <%= cl_image_tag participant.photo.key %>
+        <div class="inbox-user fw-bolder">
+          <p>
+          <span style="font-weight: bolder; font-size: 30px;"> <%= participant.full_name %> </span> </p>
+          <% if chatroom.messages.count > 0 %>
+          <p><%= chatroom.messages.order(:created_at).last.created_at.strftime("%a %b %e at %l:%M %p") %></p>
+          <% end %>
+        </div>
+    </div>
+      <% end %>
+    <% end %>
+</div>

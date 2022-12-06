@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container d-flex justify-content-center">
   <div class="feed mt-4">
   <div class="container">
@@ -7,6 +8,30 @@
     <% end %>
   </div>
 </div>
+=======
+<%= form_with url: projects_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a project"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+<div class = "container justify content-center">
+    <div class="mt-4">
+>>>>>>> 8b9389d75e9851c15eb3a4f1fa9ee084b9828d56
     <%= render @projects %>
   </div>
 </div>
+
+
+
+
+
+<%# <div class="container d-grid justify-content-center">
+  <div class="container">
+    <div class="row gx-4">
+      <div class="feed mt-4">
+  <%= render @projects %>

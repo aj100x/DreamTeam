@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :collaboration_requests, only: :index
   resources :projects do
-  resources :collaboration_requests, only: [:create, :index]
+    resources :collaboration_requests, only: [:create, :index]
+  end
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
   end
   post '/collaboration_request/:id/accept', to: 'collaboration_requests#accept', as: 'accept_collaboration'
   post '/collaboration_request/:id/decline', to: 'collaboration_requests#decline', as: 'decline_collaboration'
-
 end
