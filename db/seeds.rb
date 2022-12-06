@@ -27,7 +27,7 @@ user3.photo.attach(io: user_3_image, filename: "user3.jpg", content_type: "image
 user4 = User.new(email: "elizabeth@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lizzie", last_name: "Windsor", tagline: "Project Lead")
 user_4_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
 user4.photo.attach(io: user_4_image, filename: "user4.jpg", content_type: "image/jpg")
-user5 = User  .new(email: "lauren@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lauren", last_name: "Carroll", tagline: "Head Developer")
+user5 = User.new(email: "lauren@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lauren", last_name: "Carroll", tagline: "Head Developer")
 
 tech = Category.create!(name: 'Technology')
 transport = Category.create!(name: 'Transport')
@@ -165,6 +165,14 @@ security = Category.create!(name: 'Security')
   ProjectUser.create(
     user: user4,
     project: proj3
+  )
+  ProjectUser.create(
+    user: user4,
+    project: proj4
+  )
+  ProjectUser.create(
+    user: user2,
+    project: proj5
   )
 # create a seed for: collaboration requests as requester
 # create a seed for: collaboration request where i am project owner
