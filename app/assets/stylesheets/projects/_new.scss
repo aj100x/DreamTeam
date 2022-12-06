@@ -12,12 +12,16 @@
   background-color: white;
 }
 
+.form-control:focus {
+  background-color: white;
+}
+
 #new-project {
 
   padding-left: 15em;
   padding-right: 15em;
   padding-top: 5em;
-  background-color: #debaff;
+  background-color: rgb(252, 239, 227);
   height: max-content;
 
   .form-header {
@@ -45,10 +49,11 @@
   }
 
   input:focus {
-    border-bottom: 5px solid #ffa580;
+    // border-bottom: 5px solid #ffa580;
+    background-color: white;
   }
 
-  button-erb {
+  .button-erb {
     display: block;
     margin: 0 auto;
     line-height: 28pt;
@@ -61,7 +66,7 @@
     // border: 1px solid black;
     // box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px black;
   }
-  button-erb:hover {
+  .button-erb:hover {
     // background: black;
     color: white;
     // border: 1px solid black;
