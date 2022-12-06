@@ -1,12 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 132, 0, 0.67);
+  box-shadow: 0 0 15px ;
+  background-color: white
 }
 
 .navbar-brand {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
+  color:#1485e5;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,11 +21,12 @@
 }
 
 .nav-link{
-color: white;
+color: #1485e5;
+font-weight: bold;
 }
 
 .navbar-dropdown-color a {
-  color: black !important;
+  color: #f489b5 !important;
 }
 
 // app/stylesheets/layout/_navbar.scss
@@ -35,7 +37,7 @@ color: white;
   background: transparent;
   box-shadow: none;
   .navbar-wagon-link {
-    color: white;
+    color: #1485e5;
     font-weight: bold;
   }
 }

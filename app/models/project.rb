@@ -8,4 +8,3 @@ class Project < ApplicationRecord
   validates :name, :description, :yturl, presence: true
   validates :description, length: { minimum: 25 }
 end
- 
