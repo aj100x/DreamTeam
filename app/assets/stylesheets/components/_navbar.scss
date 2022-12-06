@@ -1,13 +1,22 @@
-.navbar-lewagon {
+.navbar {
+  background-color: bisque;
+  padding-left: 1.5em;
   justify-content: space-between;
+}
+.navbar-right{
+  padding-right: 1.5em;
+}
+
+.navbar-lewagon {
+  justify-items:left ;
   box-shadow: 0 0 15px ;
-  background-color: white
+  background-color: rgb(255, 222, 170);
 }
 
 .navbar-brand {
-  color:#1485e5;
+  color:#000000;
   font-weight: bold;
-  font-size: x-large;
+  font-size: large;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,7 +24,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  background-color: white;
+  background-color: rgb(255, 230, 196);
   width: 100px;
   object-fit: cover;
 }

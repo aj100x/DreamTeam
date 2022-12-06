@@ -1,3 +1,4 @@
+
 <div class="container d-flex justify-content-center">
   <div class="feed mt-4">
     <div class="container d-flex">
@@ -21,3 +22,26 @@
       <%= render @projects %>
   </div>
 </div>
+
+<section class="search-filter">
+
+  <%= form_with url: projects_path, method: :get, class: "d-flex searchbar" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a project"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
+  <%= form_tag projects_path, method: :get, class: "d-flex justify-content-center" do %>
+    <%= select_tag "Category", options_for_select(["Transport", "Education", "Healthcare", "Accountancy", "Sport", "Media", "Construction", "Marketing", "Charity", "Fashion", "Security", "Electronics", "Music"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Category"%>
+  <% end %>
+
+</section>
+
+<section class="projects-render">
+  <%= render @projects %>
+</section>
+

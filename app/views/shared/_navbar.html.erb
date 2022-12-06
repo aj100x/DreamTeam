@@ -1,39 +1,38 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= yield(:navbar_class) %>">
-  <div class="container-fluid">
+  <div class="navbar-left">
     <%= link_to "Home", "/", class: "navbar-brand" %>
-    <%= link_to "Requests", collaboration_requests_path, class: "navbar-brand" %>
+    <%= link_to "Projects", projects_path, class: "navbar-brand" %>
     <%= link_to "Add Project", new_project_path, class: "navbar-brand" %>
-    <%# <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %> 
+    <%= link_to "Requests", collaboration_requests_path, class: "navbar-brand" %>
+    <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %>
     <%# <%= link_to "Edit Profile", edit_user_path(current_user),  class: "navbar-brand" %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <%# <li class="nav-item active">
-            <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>
-          <%# </li> %>
-          <li class="nav-item dropdown">
-          <% if current_user.photo.attached?%>
-          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <% else %>
-            <%= image_tag "User_font_awesome.svg.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% end %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%# <%= link_to "Chat" chatrooms_path, class: "navbar-brand" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
+  </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <% if user_signed_in? %>
+        <%# <li class="nav-item active">
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>
+        <%# </li> %>
+        <li class="nav-item dropdown">
+        <% if current_user.photo.attached?%>
+        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "text-white btn btn-primary" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+          <%= image_tag "User_font_awesome.svg.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%# <%= link_to "Chat" chatrooms_path, class: "navbar-brand" %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: "text-white btn btn-primary" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

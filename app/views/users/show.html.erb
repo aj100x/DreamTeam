@@ -34,20 +34,20 @@
         </div>
         <div class="projectsowned">
           <h4>Projects I Own:</h4>
-          <p><%= @user.owned_projects.count %> </p>
+          <p><%=link_to @user.owned_projects.count, project_log_path(current_user) %></p>
         </div>
       <div class="projectsinvolved">
         <h4>Projects I am part of:</h4>
-        <p><%= @user.projects.count %></p>
+        <p><%= link_to @user.projects.count, project_log_path(current_user) %></p>
     </div>
     <div class = "editprofilebutton">
       <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
     </div>
-
   </div>
-
   </div>
 </div>
+
+
 
 
 
