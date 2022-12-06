@@ -2,7 +2,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= yield(:navbar_class) %>">
   <div class="container-fluid">
     <%= link_to "Home", "/", class: "navbar-brand" %>
-    <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %>
     <%= link_to "Requests", collaboration_requests_path, class: "navbar-brand" %>
     <%= link_to "Add Project", new_project_path, class: "navbar-brand" %>
     <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %>
@@ -15,9 +14,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <%# <li class="nav-item active">
             <%= link_to "Edit Profile", edit_user_path(current_user), class: "nav-link" %>
-          </li>
+          <%# </li> %> 
           <li class="nav-item dropdown">
           <% if current_user.photo.attached?%>
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
