@@ -75,6 +75,7 @@ class ProjectsController < ApplicationController
       :name,
       :description,
       :yturl,
+      :pitch,
       photos: [],
       category_ids: []
     )
