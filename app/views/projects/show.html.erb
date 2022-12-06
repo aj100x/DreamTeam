@@ -82,7 +82,8 @@
     </div>
   <% end %>
   </div>
-  <%= link_to 'View Chat', chatroom_path(@project.chatroom) if @project.chatroom.present? %>
+
+  <%= link_to 'View Chat', chatroom_path(@project.chatroom) %>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <%= simple_form_for [@project, @collaboration_request] do |f| %>

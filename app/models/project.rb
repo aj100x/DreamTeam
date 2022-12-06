@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
-
+  after_create do
+    Chatroom.create!(project: self)
+  end
   has_many_attached :photos
   belongs_to :owner, class_name: 'User', foreign_key: 'owner_id'
   has_many :project_users, dependent: :destroy

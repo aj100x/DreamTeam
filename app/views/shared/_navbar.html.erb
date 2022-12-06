@@ -5,8 +5,11 @@
     <%= link_to "Projects", projects_path, class: "navbar-brand" %>
     <%= link_to "Add Project", new_project_path, class: "navbar-brand" %>
     <%= link_to "Requests", collaboration_requests_path, class: "navbar-brand" %>
-    <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %>
-    <%# <%= link_to "Edit Profile", edit_user_path(current_user),  class: "navbar-brand" %>
+    <% if user_signed_in? %>
+      <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %>
+    <% else %>
+      <%= link_to new_user_session_path %>
+    <% end %>
   </div>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
