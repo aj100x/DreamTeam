@@ -87,7 +87,7 @@ security = Category.create!(name: 'Security')
   proj3 = Project.create(
     owner: user3,
     name: "Spoons R Us",
-    pitch: "Bona fide handcrafted artisinal spoons.",
+    pitch: "Bona fide handcrafted artisinal spoons. Sustainable artistry.",
     description: "This project relates to the design and creation of artisinal wooden spoons, carefully handcrafted by our team of local carpenters.",
     yturl: "5qap5aO4i9A"
   )
