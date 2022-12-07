@@ -16,12 +16,12 @@
         <%= project.pitch %>
       </div>
       <div class="right-index-internal-card">
-        <% project.categories.each do |category| %>
+        Category: <% project.categories.each do |category| %>
           <%= category.name %>
         <% end %>
         <%= render 'avatars', collaborators: project.collaborators %>
-        <%= project.categories.name %>
-      <div><%= link_to "Learn more", project_path(project) %></div>
+        <%# <%= project.categories.name %>
+
       </div>
     </div>
   </div>

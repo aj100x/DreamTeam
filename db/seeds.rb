@@ -151,7 +151,6 @@ security = Category.create!(name: 'Security')
 # adding categories to the first project
 
 CategoryProject.create!(category: education, project: proj5)
-CategoryProject.create!(category: music, project: proj5)
 CategoryProject.create!(category: fashion, project: proj5)
 
 
