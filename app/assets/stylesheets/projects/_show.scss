@@ -27,10 +27,11 @@
 
   .pitch {
     border: black 2px solid;
+    text-align: center;
+    font-size: 1.5em;
     margin-top: 1em;
     padding: 1em;
     margin-bottom: 1em;
-    font-size: 1.1em;
     font-weight: 800;
     text-align: top;
   }
@@ -47,6 +48,7 @@
       overflow: scroll;
       text-align: center;
       padding: 1.5em;
+      font-size: 0.8em;
     }
 
     .cara{
@@ -59,10 +61,11 @@
 
   .team-info {
     margin-top: 0.5em;
-    padding: 2em;
+    padding: 3.5em;
     border: black 2px solid;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .team-leader {
