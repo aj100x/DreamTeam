@@ -45,13 +45,16 @@
     width: 20%;
     height: 764px;
     background: rgb(255, 222, 170);
-    padding: 25px 30px 25px;
-    padding-left: 30px;
+    padding: 3em;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: black;
     margin-right: 1em;
+    margin-left: -5em;
     font-family: "Fjalla One";
+    display: flex;
+    flex-direction: column;
+
   }
 
   // .leftcolumn .skills p,
@@ -72,7 +75,6 @@
     margin-bottom: 10px;
     width: 200px;
     height: 200px;
-    justify-content: center;
   }
 
 .rightcolumn{
@@ -80,6 +82,7 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 30 px 25px;
+  padding: 2em;
 }
 
 .rightcolumn .bio,
@@ -110,8 +113,8 @@ justify-content: space-between;
 .editprofilebutton{
   // display: flex;
   // flex-direction: row;
-  margin-top: 876px;
-  margin-right: 1414px;
+  margin-top: 888px;
+  margin-right: 1489px;
   position: absolute;
   right: 10px;
   top: 5px;
