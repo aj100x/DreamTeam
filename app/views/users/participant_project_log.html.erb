@@ -7,7 +7,10 @@
         <h2 class="participant_project-log-description">Description: </h2>
         <h3><%= project.description %></h3>
         <div class = "removeparticipationprojectbutton">
-            <%= link_to "Remove Collaboration", delete_project_path(current_user), class: "btn btn-lg btn-primary" %>
+          <%project.collaborators.each do |collaboration| %>
+          <%=collaboration.first_name %>
+          <%end %>
+          <%= link_to "Remove Collaboration", delete_project_path(current_user), class: "btn btn-lg btn-primary" %>
           </div>
         </div>
       <%end %>
