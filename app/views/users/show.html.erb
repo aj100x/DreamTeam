@@ -32,16 +32,56 @@
           <h3><%= @user.bio %></h3>
         </div>
         <div class = "userstats">
-          <h2>Project Count:</h2>
+          <h2>Project Log:</h2>
         </div>
         <div class="projectsowned">
-          <h3>Projects I Own:</h3>
-          <h4><%=link_to @user.owned_projects.count, project_log_path(current_user) %></h4>
+          <h3>My Projects:</h3>
         </div>
+        <div class= "project-log-wrapper">
+          <% @user.owned_projects.each do |project| %>
+            <div class= "project-log-card">
+              <h2 class="project-log-name"><%= project.name %></h2>
+              <h2 class="project-log-description">Description: </h2>
+              <h3><%= project.description %></h3>
+              <div class="chat-section">
+                  <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
+                  </div>
+                <h2 class="participant_project-log-collabs">Collaborators:</h2>
+                <%project.collaborators.each do |collaboration| %>
+                <p class="collab-names"><%= collaboration.full_name %></p>
+                <%end %>
+              </div>
+            <%end %>
+      </div>
       <div class="projectsinvolved">
-        <h3>Projects I am part of:</h3>
-        <h4><%= link_to @user.projects.count, participant_project_log_path(current_user) %></h4>
+        <h3>Projects I Have Joined:</h3>
     </div>
+    <div class= "project-log-wrapper">
+    <% @user.projects.each do |project| %>
+    <div class= "project-log-card">
+      <h2 class="project-log-name"><%= project.name %></h2>
+        <h2 class="project-log-description">Description: </h2>
+        <h3><%= project.description %></h3>
+        <div class="chat-section">
+            <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
+            </div>
+        <h2 class="project-log-collabs">Collaborators:</h2>
+          <% project.collaborators.each do |collaboration| %>
+          <p class="collab-names"><%= collaboration.first_name %></p>
+          <%end %>
+        </div>
+      <%end %>
+</div>
+
+
+
+
+
+
+
+
+
+
     <div class = "editprofilebutton">
       <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
     </div>
