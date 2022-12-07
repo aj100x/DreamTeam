@@ -6,10 +6,11 @@
       class: "form-control",
       placeholder: "Find a project"
     %>
+    <%= select_tag "Category", options_for_select(["Transport", "Education", "Healthcare", "Accountancy", "Sport", "Media", "Construction", "Marketing", "Charity", "Fashion", "Security", "Electronics", "Music"]), class: "form-control fs-6", style: "width:180px; min-height:40px; margin-right:5px", prompt:"Select Category"%>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  
+
 
 </section>
 
