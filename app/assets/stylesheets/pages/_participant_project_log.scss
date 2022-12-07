@@ -1,7 +1,7 @@
-.project-log-wrapper{
+.participant_project-log-wrapper{
   margin: 5em;
 
-  .project-log{
+  .participant_project-log{
     box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
     border: black solid 2px;
     padding: 2em;
@@ -9,9 +9,7 @@
 
   }
 
-  .project-log-card{
-    // box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
-    // border: black solid 2px;
+  .participant_project-log-card{
     padding: 2em;
     margin: 2em;
     border-top: 1px solid black;
@@ -19,15 +17,17 @@
     border-right: 3.5px solid black;
     border-bottom: 3.5px solid black;
     background: white;
-  }
+}
 
-  .deleteprojectbutton{
+.removeparticipationprojectbutton{
     margin-top: 388px;
     margin-right: 152px;
     position: absolute;
     right: 10px;
     top: 5px;
-  }
+
+}
+
 
 
 }

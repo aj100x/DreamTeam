@@ -1,40 +1,50 @@
-.collab-card {
+.collab-request-wrapper{
+  margin: 5em;
 
-display: block;
+  .collab-card {
+  display: block;
+  flex-direction: column;
+  margin-bottom: 1em;
+  width: 100%;
+  font-size: 14pt;
+  line-height: 28pt;
+  font-family: "Fjalla One";
+  border: none;
+  border-top: 1px solid rgb(77, 24, 103);
+  border-left: 1px solid rgb(77, 24, 103);
+  border-right: 3.5px solid rgb(77, 24, 103) ;
+  border-bottom: 3.5px solid rgb(84, 22, 75);
+  background: #ede5f8;
+  min-width: 250px;
+  padding-left: 5px;
+  outline: none;
+  color: black;
+  }
 
-flex-direction: column;
+  .collab-request-card{
+    box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
+    border: black solid 2px;
+    padding: 2em;
+    background: #fffae6;
+  }
 
-margin-bottom: 1em;
+.request-sent{
+  padding-bottom: 1em;
+  padding-top: 0em;
+}
 
-width: 100%;
+.request-recieved {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
 
-font-size: 14pt;
-
-line-height: 28pt;
-
-font-family: "Fjalla One";
-
-border: none;
-
-border-top: 1px solid rgb(77, 24, 103);
-
-border-left: 1px solid rgb(77, 24, 103);
-
-border-right: 3.5px solid rgb(77, 24, 103) ;
-
-border-bottom: 3.5px solid rgb(84, 22, 75);
-
-background: #ede5f8;
-
-min-width: 250px;
-
-padding-left: 5px;
-
-outline: none;
-
-color: black;
+.display-6{
+  padding-bottom: 1em;
+}
 
 }
+
+
 
 
 

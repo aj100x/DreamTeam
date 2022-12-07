@@ -1,37 +1,45 @@
-<div class="m-5">
-<p class="display-6">Collaboration Requests</p>
 
-<p class="lead">Requests I have sent:</p>
+<div class= "collab-request-wrapper">
+  <div class= "collab-request-card">
+    <div class="m-5">
+    <h1 class="display-6">Collaboration Requests</h1>
+
+    <h2 class="request-sent">Requests I have sent:</h2>
 
 
-  <% current_user.collaboration_requests_as_requester.each do |collaboration_request| %>
-  <div class="collab-card">
-    <%# Project name: <%= link_to collaboration_request.project.name, user_path(collaboration_request.project)%>
-    Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %>
-    Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %>
-    Status: <%= collaboration_request.status %>
+      <% current_user.collaboration_requests_as_requester.each do |collaboration_request| %>
+      <div class="collab-card">
+      <h3 class="inside-info">Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %></h3>
+      <h3 class="inside-info">  Owned by: <%= link_to collaboration_request.project.owner.full_name, user_path(collaboration_request.project.owner) %></h3>
+      <h3 class="inside-info">  Status: <%= collaboration_request.status %></h3>
+        </div>
+      <% end %>
+
+
+    <h2 class="request-recieved">Requests I have received:</h2>
+
+    <% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
+    <div class="collab-card">
+        <h3 class="inside-info">Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %></h3>
+        <div>
+        <h3 class="inside-info"> Requested by: <%= link_to collaboration_request.requester.first_name, user_path(collaboration_request.requester.id)%></h3>
+        </div>
+        <h3 class="inside-info">Message: <%= collaboration_request.content %></h3>
+        <div>
+        <h3 class="inside-info">Status: <%= collaboration_request.status%></h3>
+        </div>
+        <div class="acceptance-card d-flex">
+          <div class="accept-btn">
+            <%= button_to "Accept", accept_collaboration_path(collaboration_request.id), data: { 'turbo-method' => :post }  %>
+          </div>
+          <div class="decline-btn">
+            <%= button_to "Decline", decline_collaboration_path(collaboration_request.id), class: "ms-2", data: { 'turbo-method' => :post }  %>
+          </div>
+        </div>
     </div>
-  <% end %>
-
-
-<p class="lead">Requests I have received:</p>
-
-<% current_user.collaboration_requests_on_projects_owned.each do |collaboration_request| %>
-<div class="collab-card">
-    Project name: <%= link_to collaboration_request.project.name, project_path(collaboration_request.project) %>
-    <br>
-    <div>
-      Requested by: <%= link_to collaboration_request.requester.first_name, user_path(collaboration_request.requester.id)%>
-    </div>
-    Message: <%= collaboration_request.content %>
-    <div class="acceptance-card d-flex">
-      <%= button_to "Accept", accept_collaboration_path(collaboration_request.id), data: { 'turbo-method' => :post }  %>
-      <%= button_to "Decline", decline_collaboration_path(collaboration_request.id), class: "ms-2", data: { 'turbo-method' => :post }  %>
-    </div>
-    Status: <%= collaboration_request.status%>
+    <% end %>
+  </div>
 </div>
-<% end %>
-
 
 
 
