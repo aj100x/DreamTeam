@@ -30,10 +30,10 @@
         </div>
         <div class="acceptance-card d-flex">
           <div class="accept-btn">
-            <%= button_to "Accept", accept_collaboration_path(collaboration_request.id), data: { 'turbo-method' => :post }  %>
+            <%= button_to "Accept", accept_collaboration_path(collaboration_request.id), class: "accept-button", data: { 'turbo-method' => :post }  %>
           </div>
-          <div class="decline-btn">
-            <%= button_to "Decline", decline_collaboration_path(collaboration_request.id), class: "ms-2", data: { 'turbo-method' => :post }  %>
+          <div class="decline-btn ms-2">
+            <%= button_to "Decline", decline_collaboration_path(collaboration_request.id), class: "decline-button", data: { 'turbo-method' => :post }  %>
           </div>
         </div>
     </div>
