@@ -44,7 +44,7 @@
               <h2 class="project-log-description">Description: </h2>
               <h3><%= project.description %></h3>
               <div class="chat-section">
-                  <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
+                  <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary align-self-end" %>
                   </div>
                 <h2 class="participant_project-log-collabs">Collaborators:</h2>
                 <%project.collaborators.each do |collaboration| %>
@@ -72,16 +72,6 @@
         </div>
       <%end %>
 </div>
-
-
-
-
-
-
-
-
-
-
     <div class = "editprofilebutton">
       <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
     </div>
