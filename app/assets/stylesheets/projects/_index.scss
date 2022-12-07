@@ -9,10 +9,13 @@
 .searchbar {
   margin-right: 1em;
 }
-
+a {
+  text-decoration: none !important;
+}
 .projects-render {
   margin-left: 7em;
   margin-right: 7em;
+  text-decoration: none;
 }
 
 .project-index-wrapper {
@@ -24,17 +27,20 @@
   padding: 3em;
   padding-top: 1.5em;
   background-color: white;
+  text-decoration: none;
 
   .project-header {
     text-align: center;
     border: black solid 2px;
-    background-color: #ffabab;
+    background-color: rgb(255, 222, 170);
+    text-decoration: none;
   }
 
   .index-card-internal {
     display: flex;
     flex-direction: row;
-
+    justify-content: center;
+    text-decoration: none;
   }
 
   .info {
@@ -43,10 +49,12 @@
     justify-content: center;
     padding: 2em;
     margin: 1em;
+    text-decoration: none;
 
     .index-desc {
       min-width: 20em;
       margin-right: 1em;
+      text-decoration: none;
       font-size: 2em;
       text-align: center;
     }
@@ -55,6 +63,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      text-decoration: none;
       margin-top: 1.5em;
     }
 
