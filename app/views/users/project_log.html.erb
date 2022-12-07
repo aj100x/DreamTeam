@@ -8,7 +8,7 @@
         <h3><%= project.description %></h3>
           <h2 class="participant_project-log-collabs">Collaborators:</h2>
           <%project.collaborators.each do |collaboration| %>
-          </h2><%= collaboration.user.name %></h2>
+          <p class="collab-names"><%= collaboration.user.name %></p>
           <%end %>
         </div>
       <%end %>
