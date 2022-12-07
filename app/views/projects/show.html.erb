@@ -4,33 +4,19 @@
   <div>
     <div class='big-title'><%= @project.name%></div>
   </div>
- <div class="big-description"><%= @project.description %></div>
 
-  <%# <%= render partial: "projects/carousel" if @project.photos.attached? %>
-
-  <section class="project-images">
-    <div class="project-images-row-1">
-      <% @project.photos.each_with_index do |photo, index| %>
-        <% if index == 0 || index == 1 %>
-          <div class="project-show-image-<%=index+1%>">
-            <%= cl_image_tag photo.key, :gravity=>"faces", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad" %>
-          </div>
-      <% end %>
-    <% end %>
-    </div>
-    <div class="project-images-row-2">
-      <% @project.photos.each_with_index do |photo, index| %>
-        <% if index == 2 || index == 3 %>
-          <div class="project-show-image-<%=index+1%>">
-            <%= cl_image_tag photo.key, :gravity=>"auto", :quality=>"auto", :fetch_format=>:auto, :crop=>"fill_pad"%>
-          </div>
-        <% end %>
-      <% end %>
-      </div>
-  </section>
-
-  <section class="pitch">
+  <div class="pitch">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+
+  <section class="image-description">
+
+    <div class="cara">
+      <%= render partial: "projects/carousel" if @project.photos.attached? %>
+    </div>
+
+  <div class="descrip"><%= @project.description %></div>
+
   </section>
 
   <section class="team-info">
@@ -79,6 +65,12 @@
     <div class="d-flex mt-3">
       <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Join the team !</a>
     </div>
+  </div>
+
+    <div class="chat-section">
+    <p class="chat-header">Join the conversation</p>
+      <%= link_to 'View Chat', chatroom_path(@project) %>
+    </div>
   </section>
 
   <%# Only displays youtube video if a yturl (youtube id) is present %>
@@ -89,7 +81,6 @@
   <% end %>
   </div>
 
-  <%= link_to 'View Chat', chatroom_path(@project.chatroom) %>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <%= simple_form_for [@project, @collaboration_request] do |f| %>
