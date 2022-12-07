@@ -10,25 +10,6 @@
   margin-right: 1em;
 }
 
-.border-card{
-  // border: 3px solid rgb(77, 24, 103);
-  // box-shadow: 6px 5px #404040;
-  // box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px black;
-}
-
-.index-card-top {
-  background-color: #ffffff;
-  // border-bottom: 4px black solid;
-  font-family: "Rubik Microbe";
-  font-weight:900;
-  color: rgb(0, 0, 0);
-}
-
-#index-inner-card {
-font-family: "Fjalla One";
-background-color: rgb(255, 255, 255);
-}
-
 .projects-render {
   margin-left: 7em;
   margin-right: 7em;
@@ -36,8 +17,8 @@ background-color: rgb(255, 255, 255);
 
 .project-index-wrapper {
   border: black solid 2px;
-  box-shadow: 15px 15px 0px #b0ceff, 15px 15px 1px 2px black;
-  margin-bottom: 2em;
+  box-shadow: 15px 15px 0px #ffa580, 15px 15px 1px 2px black;
+  margin-bottom: 2.5em;
   padding: 3em;
   padding-top: 1.5em;
   background-color: white;
@@ -45,19 +26,31 @@ background-color: rgb(255, 255, 255);
   .project-header {
     text-align: center;
     border: black solid 2px;
-    background-color: #c4c4c4;
+    background-color: #ffabab;
   }
 
   .index-card-internal {
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 
   .info {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     padding: 2em;
-    margin: 0.5em;
+    margin: 1em;
+
+    .index-desc {
+      max-width: 20em;
+      margin-right: 1em;
+    }
+
+    .right-index-internal-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
