@@ -15,11 +15,9 @@
         <%= project.pitch %>
       </div>
       <div class="right-index-internal-card">
-        Category: <% project.categories.each do |category| %>
-          <%= category.name %>
-        <% end %>
+        Categories: <%= project.categories.map { |category| category.name }.join(", ") %>
         <%= render 'avatars', collaborators: project.collaborators %>
-        <%= project.categories.name %>
+        <%# <%= project.categories.name %>
         <%# <%= project.categories.name %>
       </div>
     </div>

@@ -31,6 +31,7 @@ a {
 
   .project-header {
     text-align: center;
+    color: black;
     border: black solid 2px;
     background-color: rgb(255, 222, 170);
     text-decoration: none;
@@ -38,17 +39,16 @@ a {
 
   .index-card-internal {
     display: flex;
+    color: black;
     flex-direction: row;
-    justify-content: center;
     text-decoration: none;
   }
 
   .info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 2em;
-    margin: 1em;
+    margin-left: 9em;
+    margin-top: 2em;
     text-decoration: none;
 
     .index-desc {

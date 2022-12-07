@@ -71,7 +71,7 @@ security = Category.create!(name: 'Security')
   proj2 = Project.create(
     owner: user2,
     name: "The Perfumerie",
-    pitch: "Relief Perfume, made for sensitive noses.",
+    pitch: "Relief Perfume, hypoallergenic, made for sensitive noses.",
     description: "This project involves designing a new type of perfume that is hypoallergenic to all those with scent related hypersesnsitivties. This will combat the gap in the perfume marlket that exists for those with common allergies. ",
     yturl: "5qap5aO4i9A"
   )
@@ -105,7 +105,7 @@ security = Category.create!(name: 'Security')
   proj4 = Project.create(
     owner: user4,
     name: "Christmas Outreach",
-    pitch: "Give back this Christmas.",
+    pitch: "No one should be lonely on Christmas. We are here to help.",
     description: "Our project is geared towards finding better care for the elderly as Christmas approches elderly people are often lonely on Christmas and could use a network of friends at their fingertips. Looking for friendly people who are interested in a conmunity interest driven organisations.",
     yturl: "inyaBPWdZIM"
   )
@@ -136,8 +136,8 @@ security = Category.create!(name: 'Security')
 
   proj6 = Project.create(
     owner: user5,
-    name: "Last Minute London",
-    pitch: "Perfect night. Hassle free.",
+    name: "Last Minute London.",
+    pitch: "Leave it to us to sort your Friday night out. Hassle free.",
     description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. There's nothing more annoying than finally getting your busy friends together an not being able to find a table to dine at. This is an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins. ",
     yturl: "eRbEg5HosBo"
   )

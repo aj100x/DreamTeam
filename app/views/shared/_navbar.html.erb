@@ -8,7 +8,7 @@
     <% if user_signed_in? %>
       <%= link_to "Profile", user_path(current_user), class: "navbar-brand" %>
     <% else %>
-      <%= link_to new_user_session_path %>
+      <%# <%= link_to "Sign-in", new_user_session_path %>
     <% end %>
   </div>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
