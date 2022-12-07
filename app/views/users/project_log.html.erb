@@ -6,13 +6,18 @@
         <h2 class="project-log-name"><%= project.name %></h2>
         <h2 class="project-log-description">Description: </h2>
         <h3><%= project.description %></h3>
+          <h2 class="participant_project-log-collabs">Collaborators:</h2>
           <%project.collaborators.each do |collaboration| %>
-          <%= collaboration.user.name %>
+          </h2><%= collaboration.user.name %></h2>
           <%end %>
-        <div class = "deleteprojectbutton">
-            <%= link_to "Delete Project", delete_project_path(current_user), class: "btn btn-lg btn-primary" %>
-          </div>
         </div>
       <%end %>
   </div>
 </div>
+
+
+
+
+
+<%# <div class = "deleteprojectbutton">
+<%= link_to "Delete Project", delete_project_path(current_user), class: "btn btn-lg btn-primary" %>
