@@ -2,22 +2,27 @@
   <p class='project-header'><%= project.name %></p>
 
   <div class="index-card-internal">
+    <%= link_to project_path(project) do %>
     <div class="image">
       <% if project.photos.attached? %>
-      <%= cl_image_tag project.photos[0].key, width: 270, height: 200, crop: :fill, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+      <%= cl_image_tag project.photos[0].key, width: 200, height: 200, crop: :fill, :gravity=>"faces", :crop=>"thumb", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% else %>
       <%= image_tag "background_homepage_image.jpg", width: 270, height: 200, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% end %>
     </div>
-
+    <% end %>
     <div class="info">
-      <%= project.description %>
-      <% project.categories.each do |category| %>
-        <%= category.name %>
-      <% end %>
-      <%= render 'avatars', collaborators: project.collaborators %>
-      <%= project.categories.name %>
-      <div class=""><%= link_to "Learn more", project_path(project) %></div>
+      <div class="index-desc">
+        <%= project.description %>
+      </div>
+      <div class="right-index-internal-card">
+        <% project.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
+        <%= render 'avatars', collaborators: project.collaborators %>
+        <%= project.categories.name %>
+      <div><%= link_to "Learn more", project_path(project) %></div>
+      </div>
     </div>
   </div>
 </div>
