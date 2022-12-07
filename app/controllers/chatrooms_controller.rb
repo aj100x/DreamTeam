@@ -11,17 +11,17 @@ class ChatroomsController < ApplicationController
     @chatrooms = Chatroom.all
   end
 
-  # def create
-  #   # @chatroom = Chatroom.new(chatroom_params)
-  #   raise
-  #   Chatroom.create!(project: )
-  #   @chatroom.requester = current_user
-  #   if @chatroom.save
-  #     redirect_to chatroom_path(@chatroom)
-  #   else
-  #     render "users/show"
-  #   end
-  # end
+  def create
+    @chatroom = Chatroom.new(chatroom_params)
+    raise
+    Chatroom.create!(project: )
+    @chatroom.requester = current_user
+    if @chatroom.save
+      redirect_to chatroom_path(@chatroom)
+    else
+      render "users/show"
+    end
+  end
 
   private
 
