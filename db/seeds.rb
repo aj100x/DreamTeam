@@ -25,9 +25,14 @@ user_3_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
 user3.photo.attach(io: user_3_image, filename: "user3.jpg", content_type: "image/jpg")
 
 user4 = User.new(email: "elizabeth@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lizzie", last_name: "Windsor", tagline: "Project Lead")
-user_4_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
+user_4_image = URI.open(Rails.root.join("app", "assets", "images", "user4.jpg"))
 user4.photo.attach(io: user_4_image, filename: "user4.jpg", content_type: "image/jpg")
+
 user5 = User.new(email: "lauren@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lauren", last_name: "Carroll", tagline: "Head Developer")
+user_5_image = URI.open(Rails.root.join("app", "assets", "images", "user5.jpg"))
+user5.photo.attach(io: user_5_image, filename: "user5.jpg", content_type: "image/jpg")
+
+
 
 tech = Category.create!(name: 'Technology')
 transport = Category.create!(name: 'Transport')
@@ -101,8 +106,8 @@ security = Category.create!(name: 'Security')
     owner: user4,
     name: "Christmas Outreach",
     pitch: "Give back this Christmas.",
-    description: "Our project is geared towards finding better care for the elderly as Christmas approches elderly people are often lonely on Christmas and could use a network of friends at their fingetips. Looking for friendly people who are interested in a conmunity interest driven organisations.",
-    yturl: "5qap5aO4i9A"
+    description: "Our project is geared towards finding better care for the elderly as Christmas approches elderly people are often lonely on Christmas and could use a network of friends at their fingertips. Looking for friendly people who are interested in a conmunity interest driven organisations.",
+    yturl: "inyaBPWdZIM"
   )
 
   proj_4_image = URI.open(Rails.root.join("app", "assets", "images", "proj4.jpg"))
@@ -133,12 +138,21 @@ security = Category.create!(name: 'Security')
     owner: user5,
     name: "Last Minute London",
     pitch: "Perfect night. Hassle free.",
-    description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. It's an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins.",
-    yturl: "5qap5aO4i9A"
+    description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. There's nothing more annoying than finally getting your busy friends together an not being able to find a table to dine at. This is an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins. ",
+    yturl: "eRbEg5HosBo"
   )
 
   proj_6_image = URI.open(Rails.root.join("app", "assets", "images", "proj6.jpg"))
   proj6.photos.attach(io: proj_6_image, filename: "proj6.jpg", content_type: "image/jpg")
+
+  proj_6_image = URI.open(Rails.root.join("app", "assets", "images", "proj62.jpg"))
+  proj6.photos.attach(io: proj_6_image, filename: "proj62.jpg", content_type: "image/jpg")
+
+# adding categories to the first project
+
+CategoryProject.create!(category: education, project: proj5)
+CategoryProject.create!(category: music, project: proj5)
+CategoryProject.create!(category: fashion, project: proj5)
 
 
   CategoryProject.create!(category: education, project: proj6)
@@ -173,12 +187,33 @@ security = Category.create!(name: 'Security')
     project: proj3
   )
   ProjectUser.create(
+    user: user3,
+    project: proj3
+  )
+  ProjectUser.create(
+    user: user1,
+    project: proj3
+  )
+  ProjectUser.create(
     user: user4,
     project: proj4
   )
   ProjectUser.create(
     user: user2,
     project: proj5
+  )
+  ProjectUser.create(
+    user: user3,
+    project: proj6
+  )
+
+  ProjectUser.create(
+    user: user2,
+    project: proj6
+  )
+  ProjectUser.create(
+    user: user4,
+    project: proj6
   )
 # create a seed for: collaboration requests as requester
 # create a seed for: collaboration request where i am project owner
