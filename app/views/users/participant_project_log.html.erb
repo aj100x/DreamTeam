@@ -13,3 +13,8 @@
       <%end %>
   </div>
 </div>
+
+
+      <%project.collaborators.each do |collaboration| %>
+        Project Collaborators: <%= collaboration.first_name %>
+      <%end %>
