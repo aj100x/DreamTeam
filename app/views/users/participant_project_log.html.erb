@@ -1,6 +1,6 @@
 <div class= "participant_project-log-wrapper">
   <div class= "participant_project-log">
-  <h1 class="participanr_project-log-header">Collaborative Projects:</h1>
+  <h1 class="participant_project-log-header">Collaborative Projects:</h1>
     <% @user.projects.each do |project| %>
     <div class= "participant_project-log-card">
       <h2 class="participant_project-log-name"><%= project.name %></h2>
@@ -8,7 +8,7 @@
         <h3><%= project.description %></h3>
         <h2 class="participant_project-log-collabs">Collaborators:</h2>
           <% project.collaborators.each do |collaboration| %>
-          <%= collaboration.first_name %>
+          <p class="collab-names"><%= collaboration.first_name %></p>
           <%end %>
         </div>
       <%end %>
@@ -17,5 +17,6 @@
 
 
 
-  <%# <div class = "removeparticipationprojectbutton">
-            <%= link_to "Remove Collaboration", delete_project_path(current_user), class: "btn btn-lg btn-primary" %>
+  <div class = "removeparticipationprojectbutton">
+    <%= link_to "Remove Collaboration", delete_project_path(current_user), class: "btn btn-lg btn-primary" %>
+</div>
