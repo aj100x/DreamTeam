@@ -6,13 +6,16 @@
         <h2 class="project-log-name"><%= project.name %></h2>
         <h2 class="project-log-description">Description: </h2>
         <h3><%= project.description %></h3>
+         <div class="chat-section">
+             <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
+            </div>
           <h2 class="participant_project-log-collabs">Collaborators:</h2>
           <%project.collaborators.each do |collaboration| %>
-          <p class="collab-names"><%= collaboration.user.name %></p>
+          <p class="collab-names"><%= collaboration.full_name %></p>
           <%end %>
         </div>
       <%end %>
-  </div>
+    </div>
 </div>
 
 
