@@ -21,6 +21,8 @@ a {
 .project-index-wrapper {
   border: black solid 2px;
   box-shadow: 15px 15px 0px #ffa580, 15px 15px 1px 2px black;
+  margin-left: 5em;
+  margin-right: 5em;
   margin-bottom: 2.5em;
   padding: 3em;
   padding-top: 1.5em;
@@ -43,16 +45,18 @@ a {
 
   .info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 2em;
     margin: 1em;
     text-decoration: none;
 
     .index-desc {
-      max-width: 20em;
+      min-width: 20em;
       margin-right: 1em;
       text-decoration: none;
+      font-size: 2em;
+      text-align: center;
     }
 
     .right-index-internal-card {
@@ -60,6 +64,13 @@ a {
       flex-direction: column;
       justify-content: center;
       text-decoration: none;
+      margin-top: 1.5em;
     }
+
+    .avatars{
+      margin-top: 1em;
+    }
+
+
   }
 }
