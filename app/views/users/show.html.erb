@@ -51,14 +51,14 @@
                   <div class = "collab-pics">
               <% project.collaborators.each do |collaboration| %>
                   <% if collaboration.photo.attached? %>
-                    <%= cl_image_tag collaboration.photo.key, class: 'avatar' %>
+                    <%= cl_image_tag collaboration.photo.key, class: 'avatar', height: '32px', width: '32px' %>
                   <% else %>
                     <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
                   <% end %>
                   <% end %>
           </div>
               <div class="chat-section">
-                <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
+                <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-primary mr-10", id: "chat-btn" %>
               </div>
             </div>
           <%end %>

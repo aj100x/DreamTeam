@@ -4,7 +4,13 @@
   padding-right: 10em;
   margin-top: 1.5em;
 
+#chat-btn {
 
+  position: absolute;
+  right: 0px;
+  top: 0px;
+
+}
   .project-show-card {
     background: #ffffff;
     padding: 2em;
@@ -106,8 +112,10 @@
   }
 
   .chat-section {
-    text-align: center;
+    justify-content: end !important;
     color: #000;
+    right: 0px;
+
   }
 
   .chat-header {
