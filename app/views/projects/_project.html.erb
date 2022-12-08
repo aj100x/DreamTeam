@@ -5,9 +5,9 @@
   <div class="index-card-internal">
     <div class="image">
       <% if project.photos.attached? %>
-      <%= cl_image_tag project.photos[0].key, width: 200, height: 200, crop: :fill, :gravity=>"faces", :crop=>"thumb", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+      <%= cl_image_tag project.photos[0].key, width: 550, height: 300, crop: :fill, :gravity=>"faces", :crop=>"thumb", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% else %>
-      <%= image_tag "background_homepage_image.jpg", width: 270, height: 200, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
+      <%= image_tag "background_homepage_image.jpg", width: 550, height: 300, :gravity=>"auto", :crop=>"fill", :quality=>"auto", :fetch_format=>:auto, class: "rounded h-100" %>
       <% end %>
     </div>
     <div class="info">
@@ -15,10 +15,15 @@
         <%= project.pitch %>
       </div>
       <div class="right-index-internal-card">
-        Categories: <%= project.categories.map { |category| category.name }.join(", ") %>
-        <%= render 'avatars', collaborators: project.collaborators %>
-        <%# <%= project.categories.name %>
-        <%# <%= project.categories.name %>
+        <div class="all-categories">
+          Categories:
+          <% project.categories.each do |category| %>
+            <div class="category-box"><%= category.name %></div>
+          <% end %>
+        </div>
+        <div class="collab-title">
+          Collaborators: <%= render 'avatars', collaborators: project.collaborators %>
+        </div>
       </div>
     </div>
   </div>
