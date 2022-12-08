@@ -1,6 +1,7 @@
 <div class="panel" id="new-project">
   <div class="double-border">
     <p class="form-header">New Project</p>
+    <p class="form-instruction">Tell us a bit about your idea...</p>
     <%= simple_form_for(@project) do |f| %>
       <%= f.error_notification %>
       <%= f.input :name, label_html: { class: 'input-erb' } %>
