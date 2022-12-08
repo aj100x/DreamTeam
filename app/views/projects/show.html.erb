@@ -75,14 +75,6 @@
     </div>
   </section>
 
-  <%# Only displays youtube video if a yturl (youtube id) is present %>
-  <% if @project.yturl.present? %>
-    <div class="container d-flex justify-content-center mt-5 mb-5">
-      <iframe width="1020" height="630" src="//www.youtube.com/embed/<%=@project.yturl%>" frameborder="0" allowfullscreen></iframe>
-    </div>
-  <% end %>
-  </div>
-
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <%= simple_form_for [@project, @collaboration_request] do |f| %>
