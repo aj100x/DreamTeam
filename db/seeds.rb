@@ -13,18 +13,23 @@ Project.destroy_all
 User.destroy_all
 CollaborationRequest.destroy_all
 ProjectUser.destroy_all
-user1 = User.create(email: "araz@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Araz", last_name: "Abedi", tagline: "Project Lead")
 
-user2 = User.new(email: "sloane@tess.com", password: "123456", password_confirmation: '123456', first_name: "Sloane", last_name: "Carroll", tagline: "Project Lead")
+user1 = User.new(email: "araz@tess.com", password: "1234567", password_confirmation: '1234567', first_name: "Araz", last_name: "Abedi", tagline: "Project Lead")
+user_1_image = URI.open(Rails.root.join("app", "assets", "images", "user1.jpg"))
+user1.photo.attach(io: user_1_image, filename: "user1.jpg", content_type: "image/jpg")
+
+# puts "User 2 saved? -> #{user2.save!(validate: false)}"
+user2 = User.new(email: "sloane@tess.com", password: "123456", password_confirmation: '123456', first_name: "Sloane", last_name: "Carroll", tagline: "Designer")
 user_2_image = URI.open(Rails.root.join("app", "assets", "images", "user2.jpg"))
 user2.photo.attach(io: user_2_image, filename: "user2.jpg", content_type: "image/jpg")
+
 puts "User 2 saved? -> #{user2.save!(validate: false)}"
 
-user3 = User.new(email: "david@tess.com", password: "123456", password_confirmation: '123456', first_name: "David", last_name: "Geismar", tagline: "Project Lead")
+user3 = User.new(email: "david@tess.com", password: "123456", password_confirmation: '123456', first_name: "David", last_name: "Geismar", tagline: "Marketing Lead")
 user_3_image = URI.open(Rails.root.join("app", "assets", "images", "user3.jpg"))
 user3.photo.attach(io: user_3_image, filename: "user3.jpg", content_type: "image/jpg")
 
-user4 = User.new(email: "elizabeth@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lizzie", last_name: "Windsor", tagline: "Project Lead")
+user4 = User.new(email: "elizabeth@tess.com", password: "123456", password_confirmation: '123456', first_name: "Lizzie", last_name: "Windsor", tagline: "UX expert")
 user_4_image = URI.open(Rails.root.join("app", "assets", "images", "user4.jpg"))
 user4.photo.attach(io: user_4_image, filename: "user4.jpg", content_type: "image/jpg")
 
@@ -60,8 +65,8 @@ security = Category.create!(name: 'Security')
     yturl: "5qap5aO4i9A"
   )
 
-  proj_1_image = URI.open(Rails.root.join("app", "assets", "images", "proj1.jpg"))
-  proj1.photos.attach(io: proj_1_image, filename: "proj1.jpg", content_type: "image/jpg")
+  # proj_1_image = URI.open(Rails.root.join("app", "assets", "images", "proj1.jpg"))
+  # proj1.photos.attach(io: proj_1_image, filename: "proj1.jpg", content_type: "image/jpg")
 
   CategoryProject.create!(category: tech, project: proj1)
   CategoryProject.create!(category: transport, project: proj1)
@@ -138,7 +143,7 @@ security = Category.create!(name: 'Security')
     owner: user5,
     name: "Last Minute London.",
     pitch: "Leave it to us to sort your Friday night out. Hassle free.",
-    description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. There's nothing more annoying than finally getting your busy friends together an not being able to find a table to dine at. This is an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins. ",
+    description: "Our project seeks to alleviate the painstaking process of trying to find a last minute reservation on a Friday night in London. This is an app that reserves tables with certain restaurants and then relases them in a auction like fashion the day before the weekend begins. Skills desired include: Market strategist and UI designer. ",
     yturl: "eRbEg5HosBo"
   )
 
@@ -148,7 +153,22 @@ security = Category.create!(name: 'Security')
   proj_6_image = URI.open(Rails.root.join("app", "assets", "images", "proj62.jpg"))
   proj6.photos.attach(io: proj_6_image, filename: "proj62.jpg", content_type: "image/jpg")
 
-# adding categories to the first project
+  proj7 = Project.create(
+    owner: user1,
+    name: "Backup Beats.",
+    pitch: "You don't need to go to the club to hear the beats you want.",
+    description: "This idea centers around the offering of free peer to peer hnads-on DJing lessons. With interest on the rise and with the high expenses fpr the equipment, now is a time like never before to share resources and get young people interested in making their own beats. Skills required include marketing. ",
+    yturl: "eRbEg5HosBo"
+  )
+
+  proj_7_image = URI.open(Rails.root.join("app", "assets", "images", "proj7.jpg"))
+  proj7.photos.attach(io: proj_7_image, filename: "proj7.jpg", content_type: "image/jpg")
+
+
+  CategoryProject.create!(category: music, project: proj7)
+  CategoryProject.create!(category: education, project: proj7)
+
+  # adding categories to the first project
 
 CategoryProject.create!(category: education, project: proj5)
 CategoryProject.create!(category: fashion, project: proj5)
@@ -213,6 +233,18 @@ CategoryProject.create!(category: fashion, project: proj5)
   ProjectUser.create(
     user: user4,
     project: proj6
+  )
+  ProjectUser.create(
+    user: user4,
+    project: proj7
+  )
+  ProjectUser.create(
+    user: user5,
+    project: proj7
+  )
+  ProjectUser.create(
+    user: user2,
+    project: proj7
   )
 # create a seed for: collaboration requests as requester
 # create a seed for: collaboration request where i am project owner
