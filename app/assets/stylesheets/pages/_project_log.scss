@@ -30,7 +30,7 @@
   }
 
   .collab-names{
-    font-size: 1.5em;
+    font-size: 1em;
     display: inline-block;
   }
 
@@ -43,17 +43,23 @@
     padding-bottom: 1em;
   }
 
-  .participant_project-log-collabs{
+  .project-log-collabs{
     padding-top: 1em;
 }
 
 .project-log-description{
   margin-bottom: 0.5em;
+  font-size: 1.7em;
+}
+
+.p{
+  font-size: 1em;
 }
 
 .project-log-collabs{
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  font-size: 1.7em;
 }
 
 }

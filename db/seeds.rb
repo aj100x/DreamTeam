@@ -38,7 +38,6 @@ user_5_image = URI.open(Rails.root.join("app", "assets", "images", "user5.jpg"))
 user5.photo.attach(io: user_5_image, filename: "user5.jpg", content_type: "image/jpg")
 
 
-
 tech = Category.create!(name: 'Technology')
 transport = Category.create!(name: 'Transport')
 education = Category.create!(name: 'Education')

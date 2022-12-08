@@ -43,7 +43,7 @@
             <div class= "project-log-card">
               <h2 class="project-log-name"><%= project.name %></h2>
               <h2 class="project-log-description">Description: </h2>
-              <h6><%= project.description %></h3>
+              <p><%= project.description %></p>
               <h2 class="project-log-collabs">Collaborators:</h2>
               <%project.collaborators.each do |collaboration| %>
                 <p class="collab-names"><%= collaboration.full_name %></p>
@@ -62,7 +62,7 @@
             <div class= "project-log-card">
               <h2 class="project-log-name"><%= project.name %></h2>
               <h2 class="project-log-description">Description: </h2>
-              <h3><%= project.description %></h3>
+              <p><%= project.description %></p>
               <h2 class="project-log-collabs">Collaborators:</h2>
               <% project.collaborators.each do |collaboration| %>
                 <p class="collab-names"><%= collaboration.first_name %></p>
