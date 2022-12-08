@@ -53,6 +53,8 @@ fashion = Category.create!(name: 'Fashion')
 music = Category.create!(name: 'Music')
 electronics = Category.create!(name: 'Electronics')
 security = Category.create!(name: 'Security')
+food = Category.create!(name: 'Food')
+
 
 
 
@@ -153,6 +155,9 @@ security = Category.create!(name: 'Security')
   proj_6_image = URI.open(Rails.root.join("app", "assets", "images", "proj62.jpg"))
   proj6.photos.attach(io: proj_6_image, filename: "proj62.jpg", content_type: "image/jpg")
 
+  CategoryProject.create!(category: food, project: proj6)
+  CategoryProject.create!(category: education, project: proj6)
+
   proj7 = Project.create(
     owner: user1,
     name: "Backup Beats.",
@@ -167,6 +172,39 @@ security = Category.create!(name: 'Security')
 
   CategoryProject.create!(category: music, project: proj7)
   CategoryProject.create!(category: education, project: proj7)
+  CategoryProject.create!(category: electronics, project: proj7)
+
+  proj8 = Project.create(
+    owner: user2,
+    name: "Beatbox Academy.",
+    pitch: "Discover new sounds. Hone your style. Be the change you want to see.",
+    description: "A platform that offers the opportunity to generate tunes and share them with your friends. With interest on the rise and with the high expenses fpr the equipment, now is a time like never before to share resources and get young people interested in making their own beats. Skills required include UX and UI. ",
+    yturl: "eRbEg5HosBo"
+  )
+
+  proj_8_image = URI.open(Rails.root.join("app", "assets", "images", "proj8.jpg"))
+  proj8.photos.attach(io: proj_8_image, filename: "proj8.jpg", content_type: "image/jpg")
+
+
+  CategoryProject.create!(category: music, project: proj8)
+  CategoryProject.create!(category: education, project: proj8)
+  CategoryProject.create!(category: media, project: proj8)
+
+
+  proj9 = Project.create(
+    owner: user3,
+    name: "Street Eats",
+    pitch: "The app that unlocks London and its vibrant food truck scene.",
+    description: "We want to create a platform that offers a view to the amazing food truck scene that is available in London. Food truck owners struggle to find a platform of promotion due to the fact that they aren't on dleivery apps.",
+    yturl: "eRbEg5HosBo"
+  )
+
+  proj_9_image = URI.open(Rails.root.join("app", "assets", "images", "proj9.jpg"))
+  proj9.photos.attach(io: proj_9_image, filename: "proj9.jpg", content_type: "image/jpg")
+
+
+  CategoryProject.create!(category: food, project: proj9)
+  CategoryProject.create!(category: media, project: proj9)
 
   # adding categories to the first project
 
@@ -174,7 +212,7 @@ CategoryProject.create!(category: education, project: proj5)
 CategoryProject.create!(category: fashion, project: proj5)
 
 
-  CategoryProject.create!(category: education, project: proj6)
+
   CategoryProject.create!(category: music, project: proj6)
   CategoryProject.create!(category: fashion, project: proj6)
 
@@ -246,6 +284,32 @@ CategoryProject.create!(category: fashion, project: proj5)
     user: user2,
     project: proj7
   )
+  ProjectUser.create(
+    user: user4,
+    project: proj8
+  )
+  ProjectUser.create(
+    user: user1,
+    project: proj8
+  )
+  ProjectUser.create(
+    user: user3,
+    project: proj8
+  )
+  ProjectUser.create(
+    user: user4,
+    project: proj9
+  )
+  ProjectUser.create(
+    user: user5,
+    project: proj9
+  )
+  ProjectUser.create(
+    user: user2,
+    project: proj9
+  )
+
+
 # create a seed for: collaboration requests as requester
 # create a seed for: collaboration request where i am project owner
 
