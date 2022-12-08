@@ -1,5 +1,5 @@
 
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
 
 <div class="user-show-wrapper">
   <div class="user-show-card">
@@ -48,6 +48,15 @@
               <%project.collaborators.each do |collaboration| %>
                 <p class="collab-names"><%= collaboration.full_name %></p>
               <%end %>
+                  <div class = "collab-pics">
+              <% project.collaborators.each do |collaboration| %>
+                  <% if collaboration.photo.attached? %>
+                    <%= cl_image_tag collaboration.photo.key, class: 'avatar' %>
+                  <% else %>
+                    <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+                  <% end %>
+                  <% end %>
+          </div>
               <div class="chat-section">
                 <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
               </div>
@@ -67,6 +76,15 @@
               <% project.collaborators.each do |collaboration| %>
                 <p class="collab-names"><%= collaboration.first_name %></p>
               <%end %>
+              <div class = "collab-pics">
+              <% project.collaborators.each do |collaboration| %>
+                  <% if collaboration.photo.attached? %>
+                    <%= cl_image_tag collaboration.photo.key, class: 'avatar' %>
+                  <% else %>
+                    <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+                  <% end %>
+                  <% end %>
+          </div>
               <div class="chat-section">
                 <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
               </div>
@@ -77,17 +95,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-<%# <div class="socialmedia">
-        <ul>
-          <i class="fa-brands fa-linkedin fa-3x"></i>
-          <i class="fa-brands fa-square-twitter fa-3x"></i>
-
-        </ul>
-      </div> %>
