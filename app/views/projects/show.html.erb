@@ -1,25 +1,27 @@
 <div class="project-show-wrapper">
   <div class="project-show-card">
 
-  <div>
-    <div class='big-title'><%= @project.name%></div>
+  <div class='big-title'>
+    <%= @project.name%>
   </div>
 
-  <div class="pitch">
+<div>
 
-    <%= @project.pitch %>
-
-  </div>
 
   <section class="image-description">
-
     <div class="cara">
       <%= render partial: "projects/carousel" if @project.photos.attached? %>
     </div>
-
-  <div class="descrip"><%= @project.description %></div>
-
+    <div class="">
+      <div class="pitch">
+        <%= @project.pitch %>
+      </div>
+      <div class="descrip">
+        <%= @project.description %>
+      </div>
+    </div>
   </section>
+</div>
 
   <section class="team-info">
 
@@ -41,7 +43,7 @@
       </div>
     </div>
 
-    <div class="team-members">
+   <div class="team-members">
       <p class="team-mem">Team Members (<%= @project.collaborators.count %>)</p>
       <div class="row">
         <% @project.collaborators.each do |collaborator| %>
@@ -64,8 +66,8 @@
       </div>
     <% end %>
     </div>
-    <div class="d-flex mt-3">
-      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Join the team !</a>
+    <div class="join">
+      <a href="#" class="" data-bs-toggle="modal" data-bs-target="#exampleModal"><div class="join-text">Join the team !</div></a>
     </div>
   </div>
 
