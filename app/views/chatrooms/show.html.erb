@@ -2,7 +2,7 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-user="<%= current_user.id %>">
     <%# participant = @chatroom.requester == current_user ? @chatroom.receiver : @chatroom.requester %>
-  <h1>#<%= @chatroom.project.name %></h1>
+  <h1><%= @chatroom.project.name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
 
