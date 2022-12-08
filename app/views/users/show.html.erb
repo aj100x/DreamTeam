@@ -3,32 +3,30 @@
 
 <div class="user-show-wrapper">
   <div class="user-show-card">
-
-
-<div class="user-show-card-internal">
-    <div class="leftcolumn">
-    <% if current_user.photo.attached?%>
+    <div class="user-show-card-internal">
+      <div class="leftcolumn">
+        <% if current_user.photo.attached?%>
           <%= cl_image_tag current_user.photo.key, class: "profilepic", id: "p.p" %>
-          <% else %>
-            <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
-            <% end %>
+        <% else %>
+          <%= image_tag "User_font_awesome.svg.png", class: "profilepic", id: "p.p"%>
+        <% end %>
         <h1><%= @user.full_name%></h1>
         <div class="tagline">
           <h3><%=@user.tagline%></h3>
         </div>
-          <div class="skills">
-            <h3>Skills:</h3>
-            <h4><%= @user.skill %></h4>
-          </div>
-          <div class="qualifications">
-            <h3>Qualifications:</h3>
-            <h4><%= @user.education_details %></h4>
-          </div>
-          </div>
+        <div class="skills">
+          <h3>Skills:</h3>
+          <h4><%= @user.skill %></h4>
+        </div>
+        <div class="qualifications">
+          <h3>Qualifications:</h3>
+          <h4><%= @user.education_details %></h4>
+        </div>
+      </div>
 
-    <div class="rightcolumn">
-      <div class="bio">
-        <h1>Biography:</h1>
+      <div class="rightcolumn">
+        <div class="bio">
+          <h1>Biography:</h1>
           <h3><%= @user.bio %></h3>
         </div>
         <div class = "userstats">
@@ -43,44 +41,42 @@
               <h2 class="project-log-name"><%= project.name %></h2>
               <h2 class="project-log-description">Description: </h2>
               <h3><%= project.description %></h3>
-              <div class="chat-section">
-                  <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary text-right" %>
-                  </div>
-                <h2 class="participant_project-log-collabs">Collaborators:</h2>
-                <%project.collaborators.each do |collaboration| %>
+              <h2 class="project-log-collabs">Collaborators:</h2>
+              <%project.collaborators.each do |collaboration| %>
                 <p class="collab-names"><%= collaboration.full_name %></p>
-                <%end %>
+              <%end %>
+              <div class="chat-section">
+                <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
               </div>
-            <%end %>
-      </div>
-      <div class="projectsinvolved">
-        <h3>Projects I Have Joined:</h3>
-    </div>
-    <div class= "project-log-wrapper">
-    <% @user.projects.each do |project| %>
-    <div class= "project-log-card">
-      <h2 class="project-log-name"><%= project.name %></h2>
-        <h2 class="project-log-description">Description: </h2>
-        <h3><%= project.description %></h3>
-        <div class="chat-section">
-            <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
             </div>
-        <h2 class="project-log-collabs">Collaborators:</h2>
-          <% project.collaborators.each do |collaboration| %>
-          <p class="collab-names"><%= collaboration.first_name %></p>
           <%end %>
         </div>
-      <%end %>
-</div>
-    <div class = "editprofilebutton">
-      <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
+        <div class="projectsinvolved">
+          <h3>Projects I Have Joined:</h3>
+        </div>
+        <div class= "project-log-wrapper">
+          <% @user.projects.each do |project| %>
+            <div class= "project-log-card">
+              <h2 class="project-log-name"><%= project.name %></h2>
+              <h2 class="project-log-description">Description: </h2>
+              <h3><%= project.description %></h3>
+              <h2 class="project-log-collabs">Collaborators:</h2>
+              <% project.collaborators.each do |collaboration| %>
+                <p class="collab-names"><%= collaboration.first_name %></p>
+              <%end %>
+              <div class="chat-section">
+                <%= link_to 'View Chat', chatroom_path(project.chatroom), class: "btn btn-lg btn-primary" %>
+              </div>
+            </div>
+          <%end %>
+        </div>
+        <div class = "editprofilebutton">
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
 </div>
-
-
-
 
 
 
