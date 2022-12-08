@@ -22,6 +22,9 @@
           <h3>Qualifications:</h3>
           <h4><%= @user.education_details %></h4>
         </div>
+        <div class = "editprofilebutton">
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
+        </div>
       </div>
 
       <div class="rightcolumn">
@@ -69,9 +72,6 @@
               </div>
             </div>
           <%end %>
-        </div>
-        <div class = "editprofilebutton">
-          <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-lg btn-primary" %>
         </div>
       </div>
     </div>
