@@ -36,6 +36,21 @@ class CollaborationRequestsController < ApplicationController
   end
 
 
+# def set_request_status
+#   if @collaboration_request.status == "accepted"
+#     puts "\e[32m Accepted!"
+#   elsif @collaboration_request.status == "declined"
+#     puts "\e[31m Declined"
+#   else
+#     puts "\e[31m Pending"
+#   end
+# end
+
+
+
+
+
+
   # list the collaboration requests that the project owner has recieved
   # list the collaboration requests that the requestee has made
 
